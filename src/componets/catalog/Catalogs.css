@@ -1,0 +1,53 @@
+.button_catalog {
+  border-radius: 20px;
+  background: #d4e8d9;
+  padding: 10px 20px;
+  border: 0;
+
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  :hover {
+    color: white;
+    background-color: #598d66;
+  }
+}
+
+.wrapper_category {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list_category {
+  display: flex;
+}
+
+.item_category {
+  margin-left: 32px;
+}
+
+.title_category {
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.list_bouquet_category {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item_bouquet_category {
+  flex-basis: calc(33.33% - 10px);
+  margin-bottom: 30px;
+  text-align: center;
+}

@@ -1,0 +1,59 @@
+.titleHero {
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.spanHero {
+  color: #598d66;
+  font-family: Raleway;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+}
+
+.textHero {
+  color: #86928b;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+
+  margin-top: 20px;
+}
+
+.hero_Container {
+  display: flex;
+}
+
+.button_hero {
+  margin-top: 60px;
+  height: 65px;
+  padding: 20px 60px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #598d66;
+  background-color: transparent;
+
+  color: #598d66;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.wrapper_hero {
+  margin-left: 30px;
+  margin-top: 145px;
+
+  :hover {
+    color: white;
+    background-color: #598d66;
+  }
+}

@@ -1,0 +1,73 @@
+.wrapper_card {
+  width: 310px;
+  height: 680px;
+  background-color: #e1ede6;
+
+  padding: 20px 20px 30px 20px;
+  text-align: start;
+}
+
+.img_card {
+  width: 310px;
+  height: 432px;
+}
+
+.button_card {
+  width: 310px;
+  height: 65px;
+  padding: 20px 60px;
+  border: 1px solid #598d66;
+  margin-top: 20px;
+
+  color: #598d66;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  :hover {
+    color: white;
+    background-color: #598d66;
+  }
+}
+
+.priсe_card {
+  margin-top: 30px;
+  color: #598d66;
+  font-family: Raleway;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.material_card {
+  margin-top: 8px;
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.name_card {
+  margin-top: 10px;
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.author_card {
+  margin-top: 20px;
+  color: #86928b;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

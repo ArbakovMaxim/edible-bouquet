@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "src": "/img/alcoholic/alc_1.jpg",
+    "Alt": "Букет с пивом",
+    "name": "Мясной, с пивом",
+    "material": "",
+    "price": "800 грн"
+  },
+  {
+    "id": "2",
+    "src": "/img/alcoholic/alc_2.jpg",
+    "Alt": "Букет с пивом",
+    "name": "Пивной, с мясом",
+    "material": "",
+    "price": "1000 грн"
+  },
+  {
+    "id": "3",
+    "src": "",
+    "Alt": "",
+    "name": "string",
+    "material": "",
+    "price": "number"
+  },
+  {
+    "id": "4",
+    "src": "",
+    "Alt": "",
+    "name": "string",
+    "material": "",
+    "price": "number"
+  },
+  {
+    "id": "5",
+    "src": "",
+    "Alt": "",
+    "name": "string",
+    "material": "",
+    "price": "number"
+  },
+  {
+    "id": "6",
+    "src": "",
+    "Alt": "",
+    "name": "string",
+    "material": "",
+    "price": "number"
+  }
+]

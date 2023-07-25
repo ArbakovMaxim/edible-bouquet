@@ -1,0 +1,26 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1110px;
+
+  /* @media (max-width: 1919px) {
+      width: 954px;
+    }
+  
+    @media (max-width: 1023px) {
+      width: 296px;
+    } */
+}
+
+.section {
+  width: 1440px;
+  padding: 70px 0px;
+
+  /* @media (max-width: 1919px) {
+      width: 1024px;
+    }
+  
+    @media (max-width: 1023px) {
+      width: 320px;
+    } */
+}
