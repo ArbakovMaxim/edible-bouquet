@@ -1,48 +1,138 @@
 [
   {
     "id": "1",
-    "src": "/img/sweet/sweet_1.jpg",
-    "Alt": "Киндеры",
+    "images": [
+      {
+        "original": "/img/sweet/slide1/fullSweet_1.jpg",
+        "thumbnail": "/img/sweet/slide1/sweet_1.jpg",
+        "alt": "Киндеры"
+      },
+      {
+        "original": "/img/sweet/slide1/fullSweet_2.jpg",
+        "thumbnail": "/img/sweet/slide1/sweet_1.jpg",
+        "alt": "Киндеры"
+      },
+      {
+        "original": "/img/sweet/slide1/fullSweet_3.jpg",
+        "thumbnail": "/img/sweet/slide1/sweet_1.jpg",
+        "alt": "Киндеры"
+      }
+    ],
     "name": "Киндеры",
     "material": "",
     "price": "800 грн"
   },
   {
     "id": "2",
-    "src": "/img/sweet/sweet_2.jpg",
-    "Alt": "Шоколад",
+    "images": [
+      {
+        "original": "/img/sweet/slide2/fullSweet_1.jpg",
+        "thumbnail": "/img/sweet/slide2/sweet_2.jpg",
+        "alt": "Шоколад"
+      },
+      {
+        "original": "/img/sweet/slide2/fullSweet_2.jpg",
+        "thumbnail": "/img/sweet/slide2/sweet_2.jpg",
+        "alt": "Шоколад"
+      },
+      {
+        "original": "/img/sweet/slide2/fullSweet_3.jpg",
+        "thumbnail": "/img/sweet/slide2/sweet_2.jpg",
+        "alt": "Шоколад"
+      }
+    ],
     "name": "Шоколад",
     "material": "",
     "price": "1000 грн"
   },
   {
     "id": "3",
-    "src": "/img/sweet/sweet_3.jpg",
-    "Alt": "киндеры с соколадом",
+    "images": [
+      {
+        "original": "/img/sweet/slide3/fullSweet_1.jpg",
+        "thumbnail": "/img/sweet/slide3/sweet_3.jpg",
+        "alt": "киндеры с соколадом"
+      },
+      {
+        "original": "/img/sweet/slide3/fullSweet_2.jpg",
+        "thumbnail": "/img/sweet/slide3/sweet_3.jpg",
+        "alt": "киндеры с соколадом"
+      },
+      {
+        "original": "/img/sweet/slide3/fullSweet_3.jpg",
+        "thumbnail": "/img/sweet/slide3/sweet_3.jpg",
+        "alt": "киндеры с соколадом"
+      }
+    ],
     "name": "киндер корзинка",
     "material": "",
     "price": "1200 грн"
   },
   {
     "id": "4",
-    "src": "/img/sweet/sweet_1.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/sweet/slide1/fullSweet_1.jpg",
+        "thumbnail": "/img/sweet/slide1/sweet_1.jpg",
+        "alt": "Киндеры"
+      },
+      {
+        "original": "/img/sweet/slide1/fullSweet_2.jpg",
+        "thumbnail": "/img/sweet/slide1/sweet_1.jpg",
+        "alt": "Киндеры"
+      },
+      {
+        "original": "/img/sweet/slide1/fullSweet_3.jpg",
+        "thumbnail": "/img/sweet/slide1/sweet_1.jpg",
+        "alt": "Киндеры"
+      }
+    ],
     "name": "Мясной, с пивом",
     "material": "",
     "price": "800 грн"
   },
   {
     "id": "5",
-    "src": "/img/sweet/sweet_2.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/sweet/slide2/fullSweet_1.jpg",
+        "thumbnail": "/img/sweet/slide2/sweet_2.jpg",
+        "alt": "Шоколад"
+      },
+      {
+        "original": "/img/sweet/slide2/fullSweet_2.jpg",
+        "thumbnail": "/img/sweet/slide2/sweet_2.jpg",
+        "alt": "Шоколад"
+      },
+      {
+        "original": "/img/sweet/slide2/fullSweet_3.jpg",
+        "thumbnail": "/img/sweet/slide2/sweet_2.jpg",
+        "alt": "Шоколад"
+      }
+    ],
     "name": "Пивной, с мясом",
     "material": "",
     "price": "1000 грн"
   },
   {
     "id": "6",
-    "src": "/img/sweet/sweet_3.jpg",
-    "Alt": "Корзина. водка и мясные изделия",
+    "images": [
+      {
+        "original": "/img/sweet/slide3/fullSweet_1.jpg",
+        "thumbnail": "/img/sweet/slide3/sweet_3.jpg",
+        "alt": "киндеры с соколадом"
+      },
+      {
+        "original": "/img/sweet/slide3/fullSweet_2.jpg",
+        "thumbnail": "/img/sweet/slide3/sweet_3.jpg",
+        "alt": "киндеры с соколадом"
+      },
+      {
+        "original": "/img/sweet/slide3/fullSweet_3.jpg",
+        "thumbnail": "/img/sweet/slide3/sweet_3.jpg",
+        "alt": "киндеры с соколадом"
+      }
+    ],
     "name": "Корзинка по 50",
     "material": "",
     "price": "1200 грн"

@@ -1,48 +1,138 @@
 [
   {
     "id": "1",
-    "src": "/img/fruits/fruits_1.jpg",
-    "Alt": "Киндеры",
-    "name": "Киндеры",
+    "images": [
+      {
+        "original": "/img/fruits/slide1/fullFruits_1.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide1/fullFruits_2.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide1/fullFruits_3.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
+    "name": "Клубника",
     "material": "",
     "price": "800 грн"
   },
   {
     "id": "2",
-    "src": "/img/fruits/fruits_2.jpg",
-    "Alt": "Шоколад",
+    "images": [
+      {
+        "original": "/img/fruits/slide2/fullFruits_1.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide2/fullFruits_2.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide2/fullFruits_3.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Шоколад",
     "material": "",
     "price": "1000 грн"
   },
   {
     "id": "3",
-    "src": "/img/fruits/fruits_1.jpg",
-    "Alt": "киндеры с соколадом",
+    "images": [
+      {
+        "original": "/img/fruits/slide1/fullFruits_1.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide1/fullFruits_2.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide1/fullFruits_3.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "клубничный бум",
     "material": "",
     "price": "1200 грн"
   },
   {
     "id": "4",
-    "src": "/img/fruits/fruits_1.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/fruits/slide2/fullFruits_1.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide2/fullFruits_2.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide2/fullFruits_3.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Мясной, с пивом",
     "material": "",
     "price": "800 грн"
   },
   {
     "id": "5",
-    "src": "/img/fruits/fruits_2.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/fruits/slide1/fullFruits_1.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide1/fullFruits_2.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide1/fullFruits_3.jpg",
+        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Пивной, с мясом",
     "material": "",
     "price": "1000 грн"
   },
   {
     "id": "6",
-    "src": "/img/fruits/fruits_1.jpg",
-    "Alt": "Корзина. водка и мясные изделия",
+    "images": [
+      {
+        "original": "/img/fruits/slide2/fullFruits_1.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide2/fullFruits_2.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/fruits/slide2/fullFruits_3.jpg",
+        "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Корзинка по 50",
     "material": "",
     "price": "1200 грн"

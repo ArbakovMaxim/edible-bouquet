@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 
 export const Catalogs = () => {
   const [catalog, setCatalog] = useState("alco");
-  const [test, setTest] = useState(alco);
+  const [json, setJson] = useState(alco);
 
   const styles = {
     color: "white",
@@ -17,13 +17,13 @@ export const Catalogs = () => {
 
   useEffect(() => {
     if (catalog === "alco") {
-      setTest(alco);
+      setJson(alco);
     }
     if (catalog === "sweet") {
-      setTest(sweet);
+      setJson(sweet);
     }
     if (catalog === "fruits") {
-      setTest(fruits);
+      setJson(fruits);
     }
   }, [catalog]);
 
@@ -69,12 +69,11 @@ export const Catalogs = () => {
           </ul>
         </div>
         <ul className="list_bouquet_category">
-          {test.map((bouquet) => {
+          {json.map((bouquet) => {
             return (
               <li className="item_bouquet_category" key={bouquet.id}>
                 <Card
-                  src={bouquet.src}
-                  alt={bouquet.Alt}
+                  images={bouquet.images}
                   name={bouquet.name}
                   material={bouquet.material}
                   price={bouquet.price}

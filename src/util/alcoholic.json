@@ -1,48 +1,133 @@
 [
   {
     "id": "1",
-    "src": "/img/alcoholic/alc_1.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/alcoholic/slide1/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide1/alc_1.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide1/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide1/alc_1.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Мясной, с пивом",
     "material": "",
     "price": "800 грн"
   },
   {
     "id": "2",
-    "src": "/img/alcoholic/alc_2.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/alcoholic/slide2/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide2/alc_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide2/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide2/alc_2.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide2/fullAlc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide2/alc_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Пивной, с мясом",
     "material": "",
     "price": "1000 грн"
   },
   {
     "id": "3",
-    "src": "/img/alcoholic/alc_3.jpg",
-    "Alt": "Корзина. водка и мясные изделия",
+    "images": [
+      {
+        "original": "/img/alcoholic/slide3/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide3/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide3/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide3/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide3/fullAlc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide3/alc_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Корзинка по 50",
     "material": "",
     "price": "1200 грн"
   },
   {
     "id": "4",
-    "src": "/img/alcoholic/alc_4.jpg",
-    "Alt": "Букет мясной",
+    "images": [
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Пивной бургер",
     "material": "",
     "price": "1500 грн"
   },
   {
     "id": "5",
-    "src": "/img/alcoholic/alc_2.jpg",
-    "Alt": "Букет с пивом",
+    "images": [
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Пивной, с мясом",
     "material": "",
     "price": "1000 грн"
   },
   {
     "id": "6",
-    "src": "/img/alcoholic/alc_3.jpg",
-    "Alt": "Корзина. водка и мясные изделия",
+    "images": [
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "alt": "Букет с пивом"
+      },
+      {
+        "original": "/img/alcoholic/slide4/fullAlc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_2.jpg",
+        "alt": "Букет с пивом"
+      }
+    ],
     "name": "Корзинка по 50",
     "material": "",
     "price": "1200 грн"
