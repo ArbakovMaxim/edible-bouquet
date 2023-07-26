@@ -17,34 +17,34 @@
   },
   {
     "id": "3",
-    "src": "",
-    "Alt": "",
-    "name": "string",
+    "src": "/img/alcoholic/alc_3.jpg",
+    "Alt": "Корзина. водка и мясные изделия",
+    "name": "Корзинка по 50",
     "material": "",
-    "price": "number"
+    "price": "1200 грн"
   },
   {
     "id": "4",
-    "src": "",
-    "Alt": "",
-    "name": "string",
+    "src": "/img/alcoholic/alc_4.jpg",
+    "Alt": "Букет мясной",
+    "name": "Пивной бургер",
     "material": "",
-    "price": "number"
+    "price": "1500 грн"
   },
   {
     "id": "5",
-    "src": "",
-    "Alt": "",
-    "name": "string",
+    "src": "/img/alcoholic/alc_2.jpg",
+    "Alt": "Букет с пивом",
+    "name": "Пивной, с мясом",
     "material": "",
-    "price": "number"
+    "price": "1000 грн"
   },
   {
     "id": "6",
-    "src": "",
-    "Alt": "",
-    "name": "string",
+    "src": "/img/alcoholic/alc_3.jpg",
+    "Alt": "Корзина. водка и мясные изделия",
+    "name": "Корзинка по 50",
     "material": "",
-    "price": "number"
+    "price": "1200 грн"
   }
 ]

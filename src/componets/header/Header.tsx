@@ -12,9 +12,21 @@ export const Header = () => {
           <p className="logo-text ">S.esh Menya</p>
         </div>
         <ul className="list_navigation">
-          <li>Букеты</li>
-          <li>Новинки</li>
-          <li>О нас</li>
+          <li>
+            <a className="link_header" href="#Catalog">
+              Букеты
+            </a>
+          </li>
+          <li>
+            <a className="link_header" href="#New">
+              Новинки
+            </a>
+          </li>
+          <li>
+            <a className="link_header" href="#AboutUs">
+              О нас
+            </a>
+          </li>
           <li>
             <Shopping />
           </li>

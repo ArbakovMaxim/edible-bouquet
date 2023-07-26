@@ -1,0 +1,36 @@
+.conteiner_aboutUs {
+  display: flex;
+  align-items: center;
+}
+
+.wrapper_aboutUs {
+  margin-left: 30px;
+}
+
+.title_aboutUs {
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%; /* 44px */
+}
+
+.text_aboutUs {
+  margin-top: 20px;
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 27px */
+}
+
+.list_aboutUs {
+  margin-top: 20px;
+  display: flex;
+}
+
+.item_aboutUs {
+  margin-left: 30px;
+}

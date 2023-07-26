@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "src": "/img/sweet/sweet_1.jpg",
+    "Alt": "Киндеры",
+    "name": "Киндеры",
+    "material": "",
+    "price": "800 грн"
+  },
+  {
+    "id": "2",
+    "src": "/img/sweet/sweet_2.jpg",
+    "Alt": "Шоколад",
+    "name": "Шоколад",
+    "material": "",
+    "price": "1000 грн"
+  },
+  {
+    "id": "3",
+    "src": "/img/sweet/sweet_3.jpg",
+    "Alt": "киндеры с соколадом",
+    "name": "киндер корзинка",
+    "material": "",
+    "price": "1200 грн"
+  },
+  {
+    "id": "4",
+    "src": "/img/sweet/sweet_1.jpg",
+    "Alt": "Букет с пивом",
+    "name": "Мясной, с пивом",
+    "material": "",
+    "price": "800 грн"
+  },
+  {
+    "id": "5",
+    "src": "/img/sweet/sweet_2.jpg",
+    "Alt": "Букет с пивом",
+    "name": "Пивной, с мясом",
+    "material": "",
+    "price": "1000 грн"
+  },
+  {
+    "id": "6",
+    "src": "/img/sweet/sweet_3.jpg",
+    "Alt": "Корзина. водка и мясные изделия",
+    "name": "Корзинка по 50",
+    "material": "",
+    "price": "1200 грн"
+  }
+]

@@ -35,10 +35,9 @@
   margin-top: 60px;
   height: 65px;
   padding: 20px 60px;
-  justify-content: center;
-  align-items: center;
   border: 1px solid #598d66;
   background-color: transparent;
+  cursor: pointer;
 
   color: #598d66;
   font-family: Raleway;
@@ -48,12 +47,12 @@
   line-height: normal;
 }
 
+.button_hero:hover {
+  color: white;
+  background-color: #598d66;
+}
+
 .wrapper_hero {
   margin-left: 30px;
   margin-top: 145px;
-
-  :hover {
-    color: white;
-    background-color: #598d66;
-  }
 }
