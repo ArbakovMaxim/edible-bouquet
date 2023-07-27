@@ -40,3 +40,7 @@
 .link_header {
   text-decoration: none;
 }
+
+.item_shop {
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.Slider1 {
+  max-width: 540px;
+  height: 621px;
+  background-image: url(../../../img/Hero_img.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Slider2 {
+  max-width: 540px;
+  height: 621px;
+  background-image: url(../../../img/Hero_2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.Slider3 {
+  max-width: 540px;
+  height: 621px;
+  background-image: url(../../../img/Hero_3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

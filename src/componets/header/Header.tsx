@@ -1,9 +1,11 @@
 import { Shopping } from "../../img/svg/Shopping";
 import { Star } from "../../img/svg/Star";
+import { useBouquetsStore } from "../../state/BouquetsState";
 import "../ui/Container.css";
 import "./Header.css";
 
 export const Header = () => {
+  const bouquets = useBouquetsStore((state) => state.bouquets);
   return (
     <header className="header-section">
       <div className="container header-container">
@@ -27,7 +29,12 @@ export const Header = () => {
               О нас
             </a>
           </li>
-          <li>
+          <li
+            className="item_shop"
+            onClick={() => {
+              console.log(bouquets);
+            }}
+          >
             <Shopping />
           </li>
         </ul>

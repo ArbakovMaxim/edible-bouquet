@@ -4,27 +4,50 @@ import alco from "../../util/alcoholic.json";
 import sweet from "../../util/sweet.json";
 import fruits from "../../util/fruits.json";
 import { Card } from "../card/Сard";
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
 export const Catalogs = () => {
   const [catalog, setCatalog] = useState("alco");
-  const [json, setJson] = useState(alco);
+  const [data, setData] = useState(alco);
+  const [isLoading, setIsLoading] = useState(false);
 
   const styles = {
     color: "white",
     backgroundColor: "#598d66",
   };
 
-  useEffect(() => {
+  const loadData = async () => {
+    setIsLoading(false);
+
+    let newData: SetStateAction<
+      {
+        id: string;
+        images: { original: string; thumbnail: string; alt: string }[];
+        name: string;
+        count: string;
+        material: string;
+        price: string;
+      }[]
+    > = [];
     if (catalog === "alco") {
-      setJson(alco);
+      newData = alco;
     }
     if (catalog === "sweet") {
-      setJson(sweet);
+      newData = sweet;
     }
     if (catalog === "fruits") {
-      setJson(fruits);
+      newData = fruits;
     }
+
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    setData(newData);
+    setIsLoading(true);
+  };
+
+  useEffect(() => {
+    loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [catalog]);
 
   return (
@@ -69,18 +92,23 @@ export const Catalogs = () => {
           </ul>
         </div>
         <ul className="list_bouquet_category">
-          {json.map((bouquet) => {
-            return (
-              <li className="item_bouquet_category" key={bouquet.id}>
-                <Card
-                  images={bouquet.images}
-                  name={bouquet.name}
-                  material={bouquet.material}
-                  price={bouquet.price}
-                />
-              </li>
-            );
-          })}
+          {isLoading ? (
+            data.map((bouquet) => {
+              return (
+                <li className="item_bouquet_category" key={bouquet.id}>
+                  <Card
+                    allInfo={bouquet}
+                    images={bouquet.images}
+                    name={bouquet.name}
+                    material={bouquet.material}
+                    price={bouquet.price}
+                  />
+                </li>
+              );
+            })
+          ) : (
+            <div className="spinner"></div>
+          )}
         </ul>
       </div>
     </section>

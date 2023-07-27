@@ -13,6 +13,7 @@
 }
 
 .button_card {
+  cursor: pointer;
   width: 310px;
   height: 65px;
   padding: 20px 60px;
@@ -70,4 +71,24 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #598d66; /* Цвет спиннера */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+  margin-top: 20px;
 }
