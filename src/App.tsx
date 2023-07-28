@@ -1,4 +1,5 @@
 import "./App.css";
+import { Cart } from "./componets/Cart/Cart";
 import { AboutUs } from "./componets/aboutUs/AboutUs";
 import { Catalogs } from "./componets/catalog/Catalogs";
 import { Footer } from "./componets/footer/Footer";
@@ -15,6 +16,7 @@ function App() {
       <SeasonalBouquets />
       <AboutUs />
       <Footer />
+      <Cart />
     </div>
   );
 }
