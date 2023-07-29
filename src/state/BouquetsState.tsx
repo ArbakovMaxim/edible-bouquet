@@ -20,6 +20,7 @@ interface BouquetsState {
   addCount: (ids: string) => void;
   removeCount: (ids: string) => void;
   setBouquets: (newBouquet: Bouquet[]) => void;
+  removeAll: () => void;
 }
 
 export const useBouquetsStore = create<BouquetsState>((set) => ({
@@ -93,5 +94,8 @@ export const useBouquetsStore = create<BouquetsState>((set) => ({
         ),
       };
     });
+  },
+  removeAll: () => {
+    set({ bouquets: [] }); // Обнулить состояние bouquets
   },
 }));

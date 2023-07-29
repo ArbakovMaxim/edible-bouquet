@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "101",
     "images": [
       {
         "original": "/img/alcoholic/slide1/fullAlc_1.jpg",
@@ -19,7 +19,7 @@
     "price": "800"
   },
   {
-    "id": "2",
+    "id": "102",
     "images": [
       {
         "original": "/img/alcoholic/slide2/fullAlc_1.jpg",
@@ -43,7 +43,7 @@
     "price": "1000"
   },
   {
-    "id": "3",
+    "id": "103",
     "images": [
       {
         "original": "/img/alcoholic/slide3/fullAlc_1.jpg",
@@ -67,7 +67,7 @@
     "price": "1200"
   },
   {
-    "id": "4",
+    "id": "104",
     "images": [
       {
         "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
@@ -91,7 +91,7 @@
     "price": "1500"
   },
   {
-    "id": "5",
+    "id": "105",
     "images": [
       {
         "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
@@ -115,21 +115,21 @@
     "price": "1000"
   },
   {
-    "id": "6",
+    "id": "106",
     "images": [
       {
         "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
         "alt": "Букет с пивом"
       },
       {
         "original": "/img/alcoholic/slide4/fullAlc_2.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
         "alt": "Букет с пивом"
       },
       {
         "original": "/img/alcoholic/slide4/fullAlc_3.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
         "alt": "Букет с пивом"
       }
     ],

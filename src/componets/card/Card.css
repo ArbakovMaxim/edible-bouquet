@@ -26,11 +26,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+}
 
-  :hover {
-    color: white;
-    background-color: #598d66;
-  }
+.button_card:hover {
+  color: white;
+  background-color: #598d66;
 }
 
 .priсe_card {

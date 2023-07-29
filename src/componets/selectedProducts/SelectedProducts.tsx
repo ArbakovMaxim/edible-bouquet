@@ -49,7 +49,7 @@ export const SelectedProducts = () => {
 
   return (
     <div className="wrapper_product">
-      <h2>Товары в корзине</h2>
+      <h2 className="title_select_cart">Товары в корзине</h2>
       <ul className="list_product">
         {bouquets.map((bouquet) => {
           const sum = Number(bouquet.price) * Number(bouquet.count);
@@ -105,7 +105,7 @@ export const SelectedProducts = () => {
           </span>
         </p>
         <p className="text_count_container">
-          На сумму <span className="span_container">{totalPrice}</span>
+          На сумму <span className="span_container">{totalPrice}</span> грн
         </p>
       </div>
     </div>

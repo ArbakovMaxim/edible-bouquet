@@ -3,6 +3,7 @@ import ReactImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 import { useState, useEffect } from "react";
 import { useBouquetsStore } from "../../state/BouquetsState";
+import { toast } from "react-toastify";
 
 interface Props {
   images: Array<{ original: string; thumbnail: string; alt: string }>;
@@ -68,11 +69,12 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
       <p className="author_card">Марсель Руссо</p>
       <p className="name_card">{name}</p>
       <p className="material_card">{material}</p>
-      <p className="priсe_card">{price}</p>
+      <p className="priсe_card">{price} грн</p>
       <button
         className="button_card"
         onClick={() => {
           setBouquets([allInfo]);
+          toast.info("Добавлено в корзину");
         }}
       >
         В корзину

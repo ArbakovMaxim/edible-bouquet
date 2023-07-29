@@ -1,7 +1,10 @@
-import React from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import React, { useEffect, useState } from "react";
+import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
+import { useBouquetsStore } from "../../state/BouquetsState";
+import { toast } from "react-toastify";
 import "./FormCart.css";
+import { ThankYou } from "./thankYou/ThankYou";
 
 interface FormData {
   firstName: string;
@@ -11,6 +14,11 @@ interface FormData {
   comment: string;
 }
 
+type OnSubmitType = (
+  values: FormData,
+  formikHelpers: FormikHelpers<FormData>
+) => void | Promise<any>;
+
 const initialValues: FormData = {
   firstName: "",
   lastName: "",
@@ -19,37 +27,81 @@ const initialValues: FormData = {
   comment: "",
 };
 
+interface Prop {
+  onClose: () => void;
+}
+
 const validationSchema = Yup.object().shape({
   firstName: Yup.string()
     .required("Обязательное поле")
-    .matches(/^[а-яА-Яa-zA-Z]{1,10}$/, "Только буквы, не более 10 символов"),
+    .matches(/^[а-яА-Яa-zA-Z]{1,15}$/, "Только буквы, не более 15 символов")
+    .max(15, "Не более 15 символов"),
   lastName: Yup.string()
     .required("Обязательное поле")
-    .matches(/^[а-яА-Яa-zA-Z]{1,10}$/, "Только буквы, не более 10 символов"),
+    .matches(/^[а-яА-Яa-zA-Z]{1,15}$/, "Только буквы, не более 15 символов")
+    .max(15, "Не более 15 символов"),
   phone: Yup.string()
     .required("Обязательное поле")
     .matches(
       /^(?:\+?38)?(?:\([0-9]{3}\)|[0-9]{3})[0-9]{7}$/,
       "Неверный формат номера"
     ),
-  messenger: Yup.string().required("Обязательное поле"),
-  comment: Yup.string(),
+  messenger: Yup.string(),
+  comment: Yup.string().max(300, "Не более 300 символов"),
 });
 
-export const FormCart: React.FC = () => {
-  const onSubmit = (values: FormData) => {
-    console.log(values);
-    // Здесь можно отправить данные на сервер или выполнить другие действия с данными формы
+export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
+  const bouquets = useBouquetsStore((state) => state.bouquets);
+  const removeAll = useBouquetsStore((state) => state.removeAll);
+  const [hasFirstNameText, setHasFirstNameText] = useState(false);
+  const [hasLastNameText, setHasLastNameText] = useState(false);
+  const [hasPhoneText, setHasPhoneText] = useState(false);
+  const [hasMessengerText, setHasMessengerText] = useState(false);
+  const [hasCommentText, setHasCommentText] = useState(false);
+  const [buyBouquets, setBuyBouquets] = useState({});
+  const [showThankYouModal, setShowThankYouModal] = useState(false);
+
+  const onSubmit: OnSubmitType = async (
+    values: FormData,
+    formikHelpers: FormikHelpers<FormData>
+  ) => {
+    if (bouquets.length === 0) {
+      return toast.info("Корина пустая");
+    }
+    console.log("заказ:", buyBouquets);
+    console.log("валуе:", values);
+    removeAll();
+    formikHelpers.resetForm();
+    setShowThankYouModal(true);
   };
+
+  useEffect(() => {
+    const names: string[] = bouquets.map((bouquet) => bouquet.name);
+    const prices: string[] = bouquets.map((bouquet) => bouquet.price);
+    const counts: string[] = bouquets.map((bouquet) => bouquet.count);
+    const order = {
+      names,
+      prices,
+      counts,
+    };
+    setBuyBouquets(order);
+  }, [bouquets]);
+
   return (
-    <>
-      <h2>Ваши контакты</h2>
+    <div className="wraper_form">
+      {showThankYouModal ? (
+        <ThankYou
+          onClose={onClose}
+          setShowThankYouModal={setShowThankYouModal}
+        />
+      ) : null}
+      <h2 className="title_form_cart">Ваши контакты</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        <Form>
+        <Form autoComplete="off">
           <div className="wrapper_input">
             <div className="form-field">
               <Field
@@ -57,9 +109,21 @@ export const FormCart: React.FC = () => {
                 name="firstName"
                 placeholder=" "
                 className="input-field"
+                autoComplete="off"
+                onFocus={() => setHasFirstNameText(true)}
+                onBlur={(e: { target: { value: string } }) => {
+                  const trimmedValue = e.target.value.trim();
+                  setHasFirstNameText(!!trimmedValue);
+                  e.target.value = trimmedValue;
+                }}
               />
-              <label htmlFor="firstName" className="input-label">
-                Имя
+              <label
+                htmlFor="firstName"
+                className={`input-label ${
+                  hasFirstNameText ? "input-label-active" : ""
+                }`}
+              >
+                Имя*
               </label>
               <ErrorMessage
                 name="firstName"
@@ -74,9 +138,21 @@ export const FormCart: React.FC = () => {
                 name="lastName"
                 placeholder=" "
                 className="input-field"
+                autoComplete="off"
+                onFocus={() => setHasLastNameText(true)}
+                onBlur={(e: { target: { value: string } }) => {
+                  const trimmedValue = e.target.value.trim();
+                  setHasLastNameText(!!trimmedValue);
+                  e.target.value = trimmedValue;
+                }}
               />
-              <label htmlFor="lastName" className="input-label">
-                Фамилия
+              <label
+                htmlFor="lastName"
+                className={`input-label ${
+                  hasLastNameText ? "input-label-active" : ""
+                }`}
+              >
+                Фамилия*
               </label>
               <ErrorMessage
                 name="lastName"
@@ -93,9 +169,21 @@ export const FormCart: React.FC = () => {
                 name="phone"
                 placeholder=" "
                 className="input-field"
+                autoComplete="off"
+                onFocus={() => setHasPhoneText(true)}
+                onBlur={(e: { target: { value: string } }) => {
+                  const trimmedValue = e.target.value.trim();
+                  setHasPhoneText(!!trimmedValue);
+                  e.target.value = trimmedValue;
+                }}
               />
-              <label htmlFor="phone" className="input-label">
-                Телефон
+              <label
+                htmlFor="phone"
+                className={`input-label ${
+                  hasPhoneText ? "input-label-active" : ""
+                }`}
+              >
+                Телефон*
               </label>
               <ErrorMessage
                 name="phone"
@@ -110,8 +198,20 @@ export const FormCart: React.FC = () => {
                 name="messenger"
                 placeholder=" "
                 className="input-field"
+                autoComplete="off"
+                onFocus={() => setHasMessengerText(true)}
+                onBlur={(e: { target: { value: string } }) => {
+                  const trimmedValue = e.target.value.trim();
+                  setHasMessengerText(!!trimmedValue);
+                  e.target.value = trimmedValue;
+                }}
               />
-              <label htmlFor="messenger" className="input-label">
+              <label
+                htmlFor="messenger"
+                className={`input-label ${
+                  hasMessengerText ? "input-label-active" : ""
+                }`}
+              >
                 Телеграм или Вайбер
               </label>
               <ErrorMessage
@@ -128,8 +228,20 @@ export const FormCart: React.FC = () => {
               name="comment"
               placeholder=" "
               className="input-field__texteria"
+              autoComplete="off"
+              onFocus={() => setHasCommentText(true)}
+              onBlur={(e: { target: { value: string } }) => {
+                const trimmedValue = e.target.value.trim();
+                setHasCommentText(!!trimmedValue);
+                e.target.value = trimmedValue;
+              }}
             />
-            <label htmlFor="comment" className="input-label">
+            <label
+              htmlFor="comment"
+              className={`input-label ${
+                hasCommentText ? "input-label-active" : ""
+              }`}
+            >
               Комментарий
             </label>
             <ErrorMessage
@@ -144,6 +256,6 @@ export const FormCart: React.FC = () => {
           </button>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };

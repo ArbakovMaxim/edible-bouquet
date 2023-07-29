@@ -43,4 +43,26 @@
 
 .item_shop {
   cursor: pointer;
+  position: relative;
+}
+
+.buy_shop_count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  color: #fff;
+  background-color: #21603f;
 }

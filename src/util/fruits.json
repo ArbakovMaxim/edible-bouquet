@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "201",
     "images": [
       {
         "original": "/img/fruits/slide1/fullFruits_1.jpg",
@@ -24,7 +24,7 @@
     "price": "800 грн"
   },
   {
-    "id": "2",
+    "id": "202",
     "images": [
       {
         "original": "/img/fruits/slide2/fullFruits_1.jpg",
@@ -48,7 +48,7 @@
     "price": "1000 грн"
   },
   {
-    "id": "3",
+    "id": "203",
     "images": [
       {
         "original": "/img/fruits/slide1/fullFruits_1.jpg",
@@ -72,7 +72,7 @@
     "price": "1200 грн"
   },
   {
-    "id": "4",
+    "id": "204",
     "images": [
       {
         "original": "/img/fruits/slide2/fullFruits_1.jpg",
@@ -96,7 +96,7 @@
     "price": "800 грн"
   },
   {
-    "id": "5",
+    "id": "205",
     "images": [
       {
         "original": "/img/fruits/slide1/fullFruits_1.jpg",
@@ -120,7 +120,7 @@
     "price": "1000 грн"
   },
   {
-    "id": "6",
+    "id": "206",
     "images": [
       {
         "original": "/img/fruits/slide2/fullFruits_1.jpg",

@@ -1,0 +1,75 @@
+.thank_you_container {
+  z-index: 6;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 200px;
+
+  background-color: #e1ede6;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+.button_close_thanks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: transparent;
+}
+
+.button_close_thanks:hover {
+  background-color: #21603f;
+}
+
+.text_thanks_one {
+  text-align: center;
+  font-family: Raleway;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.text_thanks {
+  margin-top: 20px;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.wrapper_text_thanks {
+  padding: 20px;
+}
