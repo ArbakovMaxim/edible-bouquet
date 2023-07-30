@@ -5,14 +5,27 @@
 
   padding: 20px 20px 30px 20px;
   text-align: start;
-}
 
-.img_card {
-  width: 310px;
-  height: 432px;
+  @media (max-width: 1439px) {
+    width: 290px;
+    height: 650px;
+  }
+
+  @media (max-width: 767px) {
+    width: 200px;
+    height: 514px;
+  }
+  @media (max-width: 575px) {
+    width: 250px;
+    height: 550px;
+  }
 }
 
 .button_card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
   width: 310px;
   height: 65px;
@@ -26,6 +39,18 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 1439px) {
+    width: 290px;
+    height: 65px;
+  }
+
+  @media (max-width: 767px) {
+    width: 200px;
+    height: 61px;
+    padding: 20px 50px;
+    font-size: 18px;
+  }
 }
 
 .button_card:hover {
@@ -41,6 +66,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 }
 
 .material_card {
@@ -51,6 +80,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 }
 
 .name_card {
@@ -61,6 +94,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 }
 
 .author_card {
@@ -71,6 +108,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 }
 
 @keyframes spin {

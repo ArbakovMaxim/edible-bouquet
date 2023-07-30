@@ -5,6 +5,16 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 1439px) {
+    max-width: 330px;
+    height: 380px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 195px;
+    height: 239px;
+  }
 }
 
 .Slider2 {
@@ -14,6 +24,15 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 1439px) {
+    max-width: 330px;
+    height: 380px;
+  }
+  @media (max-width: 767px) {
+    max-width: 195px;
+    height: 239px;
+  }
 }
 
 .Slider3 {
@@ -23,4 +42,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+
+  @media (max-width: 1439px) {
+    max-width: 330px;
+    height: 380px;
+  }
+  @media (max-width: 767px) {
+    max-width: 195px;
+    height: 239px;
+  }
 }

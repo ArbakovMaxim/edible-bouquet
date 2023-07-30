@@ -1,0 +1,27 @@
+.list_navigation {
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  display: flex;
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
+}
+
+.item_navigation {
+  margin-left: 60px;
+
+  @media (max-width: 575px) {
+    margin-left: 0;
+    margin-top: 50px;
+  }
+}
+
+.link_header {
+  text-decoration: none;
+}

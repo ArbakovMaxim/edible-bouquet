@@ -12,11 +12,19 @@ interface Props {
 
 export const Cart = ({ isOpen, onClose }: Props) => {
   if (!isOpen) return null;
+
   const modalRoot = document.getElementById("modal-root") as Element | null;
 
   if (!modalRoot) return null;
 
   document.body.classList.add("modal-open");
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.body.classList.remove("modal-open");
+      onClose();
+    }
+  });
 
   const closeModal = () => {
     document.body.classList.remove("modal-open");
@@ -25,6 +33,7 @@ export const Cart = ({ isOpen, onClose }: Props) => {
 
   return ReactDOM.createPortal(
     <section className="section section_wrapper">
+      <div className="modal_bg_cart" onClick={closeModal}></div>
       <div className="container container_wrapper__cart">
         <div className="wrapper_cart">
           <div>

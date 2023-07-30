@@ -5,6 +5,8 @@ import { useBouquetsStore } from "../../state/BouquetsState";
 import { toast } from "react-toastify";
 import "./FormCart.css";
 import { ThankYou } from "./thankYou/ThankYou";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface FormData {
   firstName: string;
@@ -12,6 +14,7 @@ interface FormData {
   phone: string;
   messenger: string;
   comment: string;
+  selectedDate: Date | null;
 }
 
 type OnSubmitType = (
@@ -25,6 +28,7 @@ const initialValues: FormData = {
   phone: "",
   messenger: "",
   comment: "",
+  selectedDate: null,
 };
 
 interface Prop {
@@ -60,6 +64,11 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
   const [hasCommentText, setHasCommentText] = useState(false);
   const [buyBouquets, setBuyBouquets] = useState({});
   const [showThankYouModal, setShowThankYouModal] = useState(false);
+
+  const today = new Date();
+
+  const minDate = new Date();
+  minDate.setDate(today.getDate() + 3);
 
   const onSubmit: OnSubmitType = async (
     values: FormData,
@@ -101,160 +110,175 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        <Form autoComplete="off">
-          <div className="wrapper_input">
-            <div className="form-field">
-              <Field
-                type="text"
-                name="firstName"
-                placeholder=" "
-                className="input-field"
-                autoComplete="off"
-                onFocus={() => setHasFirstNameText(true)}
-                onBlur={(e: { target: { value: string } }) => {
-                  const trimmedValue = e.target.value.trim();
-                  setHasFirstNameText(!!trimmedValue);
-                  e.target.value = trimmedValue;
-                }}
-              />
-              <label
-                htmlFor="firstName"
-                className={`input-label ${
-                  hasFirstNameText ? "input-label-active" : ""
-                }`}
-              >
-                Имя*
-              </label>
-              <ErrorMessage
-                name="firstName"
-                component="div"
-                className="error-message"
+        {({ values, setFieldValue }) => (
+          <Form autoComplete="off">
+            <div className="wrapper_input">
+              <div className="form-field">
+                <Field
+                  type="text"
+                  name="firstName"
+                  placeholder=" "
+                  className="input-field"
+                  autoComplete="off"
+                  onFocus={() => setHasFirstNameText(true)}
+                  onBlur={(e: { target: { value: string } }) => {
+                    const trimmedValue = e.target.value.trim();
+                    setHasFirstNameText(!!trimmedValue);
+                    e.target.value = trimmedValue;
+                  }}
+                />
+                <label
+                  htmlFor="firstName"
+                  className={`input-label ${
+                    hasFirstNameText ? "input-label-active" : ""
+                  }`}
+                >
+                  Имя*
+                </label>
+                <ErrorMessage
+                  name="firstName"
+                  component="div"
+                  className="error-message"
+                />
+              </div>
+
+              <div className="form-field">
+                <Field
+                  type="text"
+                  name="lastName"
+                  placeholder=" "
+                  className="input-field"
+                  autoComplete="off"
+                  onFocus={() => setHasLastNameText(true)}
+                  onBlur={(e: { target: { value: string } }) => {
+                    const trimmedValue = e.target.value.trim();
+                    setHasLastNameText(!!trimmedValue);
+                    e.target.value = trimmedValue;
+                  }}
+                />
+                <label
+                  htmlFor="lastName"
+                  className={`input-label ${
+                    hasLastNameText ? "input-label-active" : ""
+                  }`}
+                >
+                  Фамилия*
+                </label>
+                <ErrorMessage
+                  name="lastName"
+                  component="div"
+                  className="error-message"
+                />
+              </div>
+            </div>
+
+            <div className="wrapper_input">
+              <div className="form-field">
+                <Field
+                  type="text"
+                  name="phone"
+                  placeholder=" "
+                  className="input-field"
+                  autoComplete="off"
+                  onFocus={() => setHasPhoneText(true)}
+                  onBlur={(e: { target: { value: string } }) => {
+                    const trimmedValue = e.target.value.trim();
+                    setHasPhoneText(!!trimmedValue);
+                    e.target.value = trimmedValue;
+                  }}
+                />
+                <label
+                  htmlFor="phone"
+                  className={`input-label ${
+                    hasPhoneText ? "input-label-active" : ""
+                  }`}
+                >
+                  Телефон*
+                </label>
+                <ErrorMessage
+                  name="phone"
+                  component="div"
+                  className="error-message"
+                />
+              </div>
+
+              <div className="form-field">
+                <Field
+                  type="text"
+                  name="messenger"
+                  placeholder=" "
+                  className="input-field"
+                  autoComplete="off"
+                  onFocus={() => setHasMessengerText(true)}
+                  onBlur={(e: { target: { value: string } }) => {
+                    const trimmedValue = e.target.value.trim();
+                    setHasMessengerText(!!trimmedValue);
+                    e.target.value = trimmedValue;
+                  }}
+                />
+                <label
+                  htmlFor="messenger"
+                  className={`input-label ${
+                    hasMessengerText ? "input-label-active" : ""
+                  }`}
+                >
+                  Телеграм или Вайбер
+                </label>
+                <ErrorMessage
+                  name="messenger"
+                  component="div"
+                  className="error-message"
+                />
+              </div>
+            </div>
+
+            <div className="form-field form-field_piker">
+              <DatePicker
+                className="data_picker"
+                selected={values.selectedDate}
+                onChange={(date) => setFieldValue("selectedDate", date)}
+                dateFormat="dd.MM.yyyy"
+                placeholderText="Выберите дату*"
+                minDate={minDate}
+                withPortal
+                portalId="root-portal"
               />
             </div>
 
             <div className="form-field">
               <Field
-                type="text"
-                name="lastName"
+                as="textarea"
+                name="comment"
                 placeholder=" "
-                className="input-field"
+                className="input-field__texteria"
                 autoComplete="off"
-                onFocus={() => setHasLastNameText(true)}
+                onFocus={() => setHasCommentText(true)}
                 onBlur={(e: { target: { value: string } }) => {
                   const trimmedValue = e.target.value.trim();
-                  setHasLastNameText(!!trimmedValue);
+                  setHasCommentText(!!trimmedValue);
                   e.target.value = trimmedValue;
                 }}
               />
               <label
-                htmlFor="lastName"
+                htmlFor="comment"
                 className={`input-label ${
-                  hasLastNameText ? "input-label-active" : ""
+                  hasCommentText ? "input-label-active" : ""
                 }`}
               >
-                Фамилия*
+                Комментарий
               </label>
               <ErrorMessage
-                name="lastName"
-                component="div"
-                className="error-message"
-              />
-            </div>
-          </div>
-
-          <div className="wrapper_input">
-            <div className="form-field">
-              <Field
-                type="text"
-                name="phone"
-                placeholder=" "
-                className="input-field"
-                autoComplete="off"
-                onFocus={() => setHasPhoneText(true)}
-                onBlur={(e: { target: { value: string } }) => {
-                  const trimmedValue = e.target.value.trim();
-                  setHasPhoneText(!!trimmedValue);
-                  e.target.value = trimmedValue;
-                }}
-              />
-              <label
-                htmlFor="phone"
-                className={`input-label ${
-                  hasPhoneText ? "input-label-active" : ""
-                }`}
-              >
-                Телефон*
-              </label>
-              <ErrorMessage
-                name="phone"
+                name="comment"
                 component="div"
                 className="error-message"
               />
             </div>
 
-            <div className="form-field">
-              <Field
-                type="text"
-                name="messenger"
-                placeholder=" "
-                className="input-field"
-                autoComplete="off"
-                onFocus={() => setHasMessengerText(true)}
-                onBlur={(e: { target: { value: string } }) => {
-                  const trimmedValue = e.target.value.trim();
-                  setHasMessengerText(!!trimmedValue);
-                  e.target.value = trimmedValue;
-                }}
-              />
-              <label
-                htmlFor="messenger"
-                className={`input-label ${
-                  hasMessengerText ? "input-label-active" : ""
-                }`}
-              >
-                Телеграм или Вайбер
-              </label>
-              <ErrorMessage
-                name="messenger"
-                component="div"
-                className="error-message"
-              />
-            </div>
-          </div>
-
-          <div className="form-field">
-            <Field
-              as="textarea"
-              name="comment"
-              placeholder=" "
-              className="input-field__texteria"
-              autoComplete="off"
-              onFocus={() => setHasCommentText(true)}
-              onBlur={(e: { target: { value: string } }) => {
-                const trimmedValue = e.target.value.trim();
-                setHasCommentText(!!trimmedValue);
-                e.target.value = trimmedValue;
-              }}
-            />
-            <label
-              htmlFor="comment"
-              className={`input-label ${
-                hasCommentText ? "input-label-active" : ""
-              }`}
-            >
-              Комментарий
-            </label>
-            <ErrorMessage
-              name="comment"
-              component="div"
-              className="error-message"
-            />
-          </div>
-
-          <button className="buttom_submit_form" type="submit">
-            Подтвердить заказ
-          </button>
-        </Form>
+            <button className="buttom_submit_form" type="submit">
+              Подтвердить заказ
+            </button>
+          </Form>
+        )}
       </Formik>
     </div>
   );

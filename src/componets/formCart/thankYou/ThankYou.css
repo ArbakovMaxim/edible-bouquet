@@ -14,6 +14,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 575px) {
+    width: 290px;
+  }
 }
 
 .modal_bg {

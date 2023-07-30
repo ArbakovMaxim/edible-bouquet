@@ -42,7 +42,6 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
 
     const promises = images.map((img) => loadImage(img.original));
 
-    // Проверка, все ли изображения загружены
     Promise.all(promises)
       .then(() => {
         setIsLoaded(true);
@@ -67,6 +66,9 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
         showPlayButton={false}
       />
       <p className="author_card">Марсель Руссо</p>
+      {/* <button className="" onClick={handleClick}>
+        Состав
+      </button> */}
       <p className="name_card">{name}</p>
       <p className="material_card">{material}</p>
       <p className="priсe_card">{price} грн</p>

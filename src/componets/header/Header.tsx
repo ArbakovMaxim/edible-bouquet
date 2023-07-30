@@ -5,11 +5,23 @@ import { useBouquetsStore } from "../../state/BouquetsState";
 import "../ui/Container.css";
 import "./Header.css";
 import { Cart } from "../Cart/Cart";
+import { Navigation } from "../navigation/Navigation";
+import { MobM } from "../../img/svg/MobM";
+import { MobMenu } from "../mobMenu/MobMenu";
 
 export const Header = () => {
   const [count, setCount] = useState(0);
+  const [isOpenMobMenu, setIsOpenMobMenu] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const bouquets = useBouquetsStore((state) => state.bouquets);
+
+  const handleMenuOpen = () => {
+    setIsOpenMobMenu(true);
+  };
+
+  const handleMenuClose = () => {
+    setIsOpenMobMenu(false);
+  };
 
   useEffect(() => {
     const totalCount = bouquets.reduce(
@@ -34,27 +46,21 @@ export const Header = () => {
           <Star />
           <p className="logo-text ">S.esh Menya</p>
         </div>
-        <ul className="list_navigation">
-          <li>
-            <a className="link_header" href="#Catalog">
-              Букеты
-            </a>
-          </li>
-          <li>
-            <a className="link_header" href="#New">
-              Новинки
-            </a>
-          </li>
-          <li>
-            <a className="link_header" href="#AboutUs">
-              О нас
-            </a>
-          </li>
-          <li className="item_shop" onClick={handleOpenModal}>
+        <div className="wraper_navigation_shop">
+          <div className="wraper_navigation_tab">
+            <Navigation onClose={() => {}} />
+          </div>
+          <div className="wraper_navigation_mob">
+            <button className="button_mob_menu_open" onClick={handleMenuOpen}>
+              <MobM />
+            </button>
+          </div>
+          <div className="item_shop" onClick={handleOpenModal}>
             <Shopping />
             {count ? <div className="buy_shop_count">{count}</div> : null}
-          </li>
-        </ul>
+          </div>
+        </div>
+        <MobMenu isOpen={isOpenMobMenu} onClose={handleMenuClose} />
         <Cart isOpen={isModalOpen} onClose={handleCloseModal} />
       </div>
     </header>

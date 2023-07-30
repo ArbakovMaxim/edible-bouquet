@@ -1,9 +1,14 @@
 .section_new {
   position: relative;
+  width: 100%;
   height: 434px;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../../img/new.jpg);
+
+  @media (max-width: 575px) {
+    height: 553px;
+  }
 }
 
 .overlay {
@@ -32,6 +37,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 100%; /* 40px */
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 }
 
 .text_new {
@@ -42,6 +51,11 @@
   font-style: normal;
   font-weight: 500;
   line-height: 150%; /* 27px */
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 140%;
+  }
 }
 
 .wrapper_title_new {
@@ -50,6 +64,13 @@
 
 .wrapper_new {
   width: 540px;
+  @media (max-width: 767px) {
+    width: 510px;
+  }
+
+  @media (max-width: 575px) {
+    width: 290px;
+  }
 }
 
 .button_new {
@@ -61,6 +82,7 @@
   justify-content: center;
   align-items: center;
   background: #eedb6d;
+  border: none;
 
   color: #2c2d35;
   font-family: Raleway;

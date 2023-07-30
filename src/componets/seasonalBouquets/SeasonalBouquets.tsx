@@ -5,14 +5,14 @@ import { Star2 } from "../../img/svg/Star2";
 export const SeasonalBouquets = () => {
   return (
     <section className="section section_new" id="New">
-      <div className="overlay"></div>
+      <div className="overlay" />
       <div className="container container_new">
         <div className="wrapper_new">
           <div className="wrapper_title_new">
             <div className="wrapper_svg_new">
               <Star2 />
             </div>
-            <h2 className="title_new">Новая коллекция французских авторов</h2>d
+            <h2 className="title_new">Новая коллекция французских авторов</h2>
           </div>
           <p className="text_new">
             Сложно сказать, почему акционеры крупнейших компаний призывают нас к

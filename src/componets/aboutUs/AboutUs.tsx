@@ -9,9 +9,13 @@ export const AboutUs = () => {
   return (
     <section className="section" id="AboutUs">
       <div className="container conteiner_aboutUs">
-        <img src={ImgAbout} alt="Девушка со съедобным букетом"></img>
+        <img
+          className="img_aboutUs"
+          src={ImgAbout}
+          alt="Девушка со съедобным букетом"
+        ></img>
         <div className="wrapper_aboutUs">
-          <h2>Наша команда</h2>
+          <h2 className="title_aboutUs">Наша команда</h2>
           <p className="text_aboutUs">
             Значимость этих проблем настолько очевидна, что базовый вектор
             развития позволяет оценить значение экспериментов, поражающих по

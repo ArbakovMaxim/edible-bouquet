@@ -1,5 +1,5 @@
 .footer {
-  width: 1440px;
+  width: 100%;
   background-color: #e1ede6;
   padding: 23px 0px;
 }
@@ -7,12 +7,31 @@
 .container_footer {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 }
 
 .wrapper_logo_footer {
   margin-bottom: 41px;
   display: flex;
   align-items: center;
+  @media (max-width: 575px) {
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+}
+
+.wrapper_logo_and_telefon_footer {
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @media (max-width: 575px) {
+    display: block;
+    text-align: center;
+  }
 }
 
 .logo-text_footer {
@@ -82,12 +101,47 @@
 
 .wrapper_bouquets_footer {
   margin-left: 115px;
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
 }
 
 .wrapper_aboutUS_footer {
   margin-left: 60px;
+
+  @media (max-width: 767px) {
+    margin-left: 0;
+  }
 }
 
 .wrapper_footer {
   display: flex;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.wrapper_list_social_footer {
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #c3d1c6;
+  }
+}
+
+.wrapper_bouquets_and_aboutUS_footer {
+  display: flex;
+
+  @media (max-width: 767px) {
+    justify-content: space-around;
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 575px) {
+    margin-top: 15px;
+  }
 }

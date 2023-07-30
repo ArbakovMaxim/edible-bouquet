@@ -51,7 +51,7 @@ export const Catalogs = () => {
   }, [catalog]);
 
   return (
-    <section className="section" id="Catalog">
+    <section className="section section_catalog" id="Catalog">
       <div className="container">
         <div className="wrapper_category">
           <h2 className="title_category">Букеты</h2>

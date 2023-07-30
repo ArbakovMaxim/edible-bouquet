@@ -1,9 +1,31 @@
 .wraper_form {
   margin-bottom: 30px;
+
+  @media (max-width: 1439px) {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+}
+
+.wrapper_input {
+  max-width: 540px;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 575px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .form-field {
   position: relative;
+}
+
+.form-field_piker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title_form_cart {
@@ -34,13 +56,22 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    width: 180px;
+  }
+
+  @media (max-width: 575px) {
+    width: 250px;
+  }
 }
 
 .input-field__texteria {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   width: 519px;
-  height: 150px;
+  height: 97px;
   padding: 10px 10px 10px 19px;
   margin-bottom: 30px;
   border-radius: 20px;
@@ -53,6 +84,22 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  @media (max-width: 767px) {
+    width: 380px;
+  }
+
+  @media (max-width: 575px) {
+    width: 250px;
+  }
+}
+
+.data_picker {
+  width: 140px;
+  padding-left: 15px;
+  height: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .input-label {
@@ -92,12 +139,6 @@
   margin-top: -30px;
 }
 
-.wrapper_input {
-  max-width: 540px;
-  display: flex;
-  justify-content: space-between;
-}
-
 .buttom_submit_form {
   cursor: pointer;
   border-radius: 20px;
@@ -117,6 +158,14 @@
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease;
+
+  @media (max-width: 767px) {
+    width: 410px;
+  }
+
+  @media (max-width: 575px) {
+    width: 281px;
+  }
 }
 
 .buttom_submit_form::before {

@@ -1,6 +1,11 @@
 .wrapper_cart {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1439px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 .section_wrapper {
@@ -16,6 +21,16 @@
   border-radius: 20px;
   padding: 30px;
   background: #f8f8f8;
+
+  @media (max-width: 1439px) {
+    padding: 30px 0;
+    max-height: 700px;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 575px) {
+    padding: 40px 0;
+  }
 }
 
 .button_close_cart {
@@ -41,4 +56,13 @@
 
 .button_close_cart:hover {
   background-color: #21603f;
+}
+
+.modal_bg_cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }

@@ -10,30 +10,34 @@ export const Footer = () => {
     <footer className="footer">
       <div className="container container_footer">
         <div className="wrapper_footer">
-          <div>
+          <div className="wrapper_logo_and_telefon_footer">
             <div className="wrapper_logo_footer ">
               <Star />
               <p className="logo-text_footer">S.esh Menya</p>
             </div>
-            <a href="tel:+380635*34545" className="tel_footer">
-              +38 (063) 5*3-45-45
-            </a>
-            <p className="text_footer">Мастерская</p>
+            <div>
+              <a href="tel:+380635*34545" className="tel_footer">
+                +38 (063) 5*3-45-45
+              </a>
+              <p className="text_footer">Мастерская</p>
+            </div>
           </div>
-          <div className="wrapper_bouquets_footer">
-            <h2 className="title_block_footer">Букеты</h2>
-            <ul>
-              <li className="text_block_footer">Алкогольные</li>
-              <li className="text_block_footer">Сладкие</li>
-              <li className="text_block_footer">Фруктовые</li>
-            </ul>
-          </div>
-          <div className="wrapper_aboutUS_footer">
-            <h2 className="title_block_footer">О нас</h2>
-            <p className="text_block_footer">Мастер</p>
+          <div className="wrapper_bouquets_and_aboutUS_footer">
+            <div className="wrapper_bouquets_footer">
+              <h2 className="title_block_footer">Букеты</h2>
+              <ul>
+                <li className="text_block_footer">Алкогольные</li>
+                <li className="text_block_footer">Сладкие</li>
+                <li className="text_block_footer">Фруктовые</li>
+              </ul>
+            </div>
+            <div className="wrapper_aboutUS_footer">
+              <h2 className="title_block_footer">О нас</h2>
+              <p className="text_block_footer">Мастер</p>
+            </div>
           </div>
         </div>
-        <div>
+        <div className="wrapper_list_social_footer ">
           <ul className="list_social_footer">
             <li>
               <a href="https://www.facebook.com/S.esh.menyaa">

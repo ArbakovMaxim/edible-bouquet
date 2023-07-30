@@ -8,8 +8,21 @@ interface Prop {
 }
 
 export const ThankYou = ({ onClose, setShowThankYouModal }: Prop) => {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      onClose();
+      setShowThankYouModal(false);
+    }
+  });
+
   return (
-    <div className="modal_bg">
+    <div
+      className="modal_bg"
+      onClick={() => {
+        onClose();
+        setShowThankYouModal(false);
+      }}
+    >
       <div className="thank_you_container">
         <button
           className="button_close_thanks"

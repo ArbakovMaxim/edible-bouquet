@@ -1,9 +1,6 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-// import Hero_1 from "../../../img/Hero_img.png";
-// import Hero_2 from "../../../img/Hero_2.jpg";
-// import Hero_3 from "../../../img/Hero_3.jpg";
 
 import "./HeroSlider.css";
 
