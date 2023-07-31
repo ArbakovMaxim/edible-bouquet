@@ -2,6 +2,7 @@
   "name": "edible-bouquet",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://ArbakovMaxim.github.io/edible-bouquet",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -26,6 +27,8 @@
     "zustand": "^4.3.9"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -53,6 +56,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react-datepicker": "^4.15.0",
     "@types/react-image-gallery": "^1.2.0",
-    "@types/react-slick": "^0.23.10"
+    "@types/react-slick": "^0.23.10",
+    "gh-pages": "^5.0.0"
   }
 }

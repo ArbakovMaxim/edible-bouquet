@@ -17,7 +17,11 @@ export const Hero = () => {
             Высокое качество букетов из свежих продуктов и сладостей. Уникальные
             произведения искуства, заменят обычные букеты, доступные цены.
           </p>
-          <button className="button_hero">Продукция</button>
+          <button className="button_hero">
+            <a className="link_hero" href="#New">
+              Рекомендуемые
+            </a>
+          </button>
         </div>
       </div>
     </section>

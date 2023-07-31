@@ -2,8 +2,8 @@ import "./AboutUs.css";
 import "../ui/Container.css";
 import ImgAbout from "../../img/about.jpg";
 import Img1 from "../../img/Ellipse_30.png";
-import Img2 from "../../img/Ellipse_31.jpg";
-import Img3 from "../../img/Ellipse-32.jpg";
+import Img2 from "../../img/Ellipse_31.png";
+import Img3 from "../../img/Ellipse-32.png";
 
 export const AboutUs = () => {
   return (
@@ -15,12 +15,14 @@ export const AboutUs = () => {
           alt="Девушка со съедобным букетом"
         ></img>
         <div className="wrapper_aboutUs">
-          <h2 className="title_aboutUs">Наша команда</h2>
+          <h2 className="title_aboutUs">О себе</h2>
           <p className="text_aboutUs">
-            Значимость этих проблем настолько очевидна, что базовый вектор
-            развития позволяет оценить значение экспериментов, поражающих по
-            своей масштабности и грандиозности. Мы вынуждены отталкиваться от
-            того, что консультация с широким активом.
+            Я мама двух деток и люблю свою работу. Как-то раз мне на день
+            рождения подарили сьедобный букет и это был восторг. Я тоже захотела
+            создавать оригинальные букеты и дарить такие же эмоции, как я
+            испытала. Долгий тернистый путь проб и ошибок к своей цели, и вот я
+            уже сама их создаю. В каждый букет я вкладываю радость, восторг и
+            щепоточку любви.
           </p>
           <ul className="list_aboutUs">
             <li>

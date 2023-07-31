@@ -23,5 +23,11 @@
 }
 
 .link_header {
+  color: #2c2d35;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
   text-decoration: none;
 }

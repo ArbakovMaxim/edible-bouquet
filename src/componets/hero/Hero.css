@@ -140,3 +140,21 @@
     margin-left: 0;
   }
 }
+
+.link_hero {
+  color: #598d66;
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.link_hero:hover {
+  color: white;
+}
+
+.button_hero:hover .link_hero {
+  color: white;
+}

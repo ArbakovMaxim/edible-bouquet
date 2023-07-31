@@ -7,7 +7,7 @@ import { Card } from "../card/Сard";
 import { SetStateAction, useEffect, useState } from "react";
 
 export const Catalogs = () => {
-  const [catalog, setCatalog] = useState("alco");
+  const [catalog, setCatalog] = useState("fruits");
   const [data, setData] = useState(alco);
   const [isLoading, setIsLoading] = useState(false);
 
