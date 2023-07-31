@@ -3,18 +3,18 @@
     "id": "201",
     "images": [
       {
-        "original": "/img/fruits/slide1/fullFruits_1.jpg",
-        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "original": "/img/Fruits/slide1/fullFruits_1.jpg",
+        "thumbnail": "/img/Fruits/slide1/fruits_1.jpg",
         "alt": "Карзина с клубникой"
       },
       {
-        "original": "/img/fruits/slide1/fullFruits_2.jpg",
-        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "original": "/img/Fruits/slide1/fullFruits_2.jpg",
+        "thumbnail": "/img/Fruits/slide1/fruits_1.jpg",
         "alt": "Карзина с клубникой"
       },
       {
-        "original": "/img/fruits/slide1/fullFruits_3.jpg",
-        "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
+        "original": "/img/Fruits/slide1/fullFruits_3.jpg",
+        "thumbnail": "/img/Fruits/slide1/fruits_1.jpg",
         "alt": "Карзина с клубникой"
       }
     ],
