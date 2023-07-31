@@ -88,13 +88,11 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
           </button>
         </div>
         <div className="card__face card__face--back">
-          <p className="material_card">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-            dignissimos minima, illum expedita tenetur cum deserunt eius
-            perspiciatis aliquam earum ratione, ipsa neque unde nihil quasi,
-            placeat sit voluptatibus? Quos?
-          </p>
-          <button className="button_back_card" onClick={handleClick}>
+          <p
+            className="material_card"
+            dangerouslySetInnerHTML={{ __html: material }}
+          />
+          <button className="button_back_card " onClick={handleClick}>
             назад
           </button>
         </div>
