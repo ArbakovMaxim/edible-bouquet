@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/edible-bouquet/static/css/main.6e7c7d68.css",
+    "main.js": "/edible-bouquet/static/js/main.290b8538.js",
+    "static/js/787.de2edaa7.chunk.js": "/edible-bouquet/static/js/787.de2edaa7.chunk.js",
+    "static/media/Hero_img.png": "/edible-bouquet/static/media/Hero_img.3e245f41712db0d07748.png",
+    "static/media/new.jpg": "/edible-bouquet/static/media/new.5f4f0c93f333fd943b23.jpg",
+    "static/media/Hero_2.jpg": "/edible-bouquet/static/media/Hero_2.bfc3a7f9c1d0002673da.jpg",
+    "static/media/about.jpg": "/edible-bouquet/static/media/about.0c3f60a13da920018968.jpg",
+    "static/media/Hero_3.jpg": "/edible-bouquet/static/media/Hero_3.d81b081cdb34541e319c.jpg",
+    "static/media/Ellipse_30.png": "/edible-bouquet/static/media/Ellipse_30.3f6796d28777c08399a5.png",
+    "static/media/slick.svg": "/edible-bouquet/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/edible-bouquet/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/edible-bouquet/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/edible-bouquet/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/edible-bouquet/index.html",
+    "main.6e7c7d68.css.map": "/edible-bouquet/static/css/main.6e7c7d68.css.map",
+    "main.290b8538.js.map": "/edible-bouquet/static/js/main.290b8538.js.map",
+    "787.de2edaa7.chunk.js.map": "/edible-bouquet/static/js/787.de2edaa7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6e7c7d68.css",
+    "static/js/main.290b8538.js"
+  ]
+}
