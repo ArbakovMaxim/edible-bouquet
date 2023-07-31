@@ -46,17 +46,17 @@
     "id": "103",
     "images": [
       {
-        "original": "/img/alcoholic/slide3/fullAlc_1.jpg",
+        "original": "/img/alcoholic/slide3/fullAlc_1.png",
         "thumbnail": "/img/alcoholic/slide3/alc_3.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/img/alcoholic/slide3/fullAlc_2.jpg",
+        "original": "/img/alcoholic/slide3/fullAlc_2.png",
         "thumbnail": "/img/alcoholic/slide3/alc_3.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/img/alcoholic/slide3/fullAlc_3.jpg",
+        "original": "/img/alcoholic/slide3/fullAlc_3.png",
         "thumbnail": "/img/alcoholic/slide3/alc_3.jpg",
         "alt": "Букет с пивом"
       }
@@ -94,18 +94,18 @@
     "id": "105",
     "images": [
       {
-        "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
+        "original": "/img/alcoholic/slide5/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide5/alc_5.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/img/alcoholic/slide4/fullAlc_2.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
+        "original": "/img/alcoholic/slide5/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide5/alc_5.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/img/alcoholic/slide4/fullAlc_3.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
+        "original": "/img/alcoholic/slide5/fullAlc_3.jpg",
+        "thumbnail": "/img/alcoholic/slide5/alc_5.jpg",
         "alt": "Букет с пивом"
       }
     ],
@@ -118,18 +118,13 @@
     "id": "106",
     "images": [
       {
-        "original": "/img/alcoholic/slide4/fullAlc_1.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
+        "original": "/img/alcoholic/slide6/fullAlc_1.jpg",
+        "thumbnail": "/img/alcoholic/slide6/alc_6.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/img/alcoholic/slide4/fullAlc_2.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
-        "alt": "Букет с пивом"
-      },
-      {
-        "original": "/img/alcoholic/slide4/fullAlc_3.jpg",
-        "thumbnail": "/img/alcoholic/slide4/alc_4.jpg",
+        "original": "/img/alcoholic/slide6/fullAlc_2.jpg",
+        "thumbnail": "/img/alcoholic/slide6/alc_6.jpg",
         "alt": "Букет с пивом"
       }
     ],

@@ -22,7 +22,12 @@ interface Props {
 
 export const Card = ({ images, name, material, price, allInfo }: Props) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isFlipped, setIsFlipped] = useState(false);
   const setBouquets = useBouquetsStore((state) => state.setBouquets);
+
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
 
   useEffect(() => {
     const imgLoaded: { [key: string]: boolean } = {};
@@ -57,30 +62,43 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
 
   return (
     <div className="wrapper_card">
-      <ReactImageGallery
-        items={images}
-        showFullscreenButton={false}
-        showNav={false}
-        showBullets={true}
-        showThumbnails={false}
-        showPlayButton={false}
-      />
-      <p className="author_card">Марсель Руссо</p>
-      {/* <button className="" onClick={handleClick}>
-        Состав
-      </button> */}
-      <p className="name_card">{name}</p>
-      <p className="material_card">{material}</p>
-      <p className="priсe_card">{price} грн</p>
-      <button
-        className="button_card"
-        onClick={() => {
-          setBouquets([allInfo]);
-          toast.info("Добавлено в корзину");
-        }}
-      >
-        В корзину
-      </button>
+      <div className={`card ${isFlipped ? "is-flipped" : ""}`}>
+        <div className="card__face">
+          <ReactImageGallery
+            items={images}
+            showFullscreenButton={false}
+            showNav={false}
+            showBullets={true}
+            showThumbnails={false}
+            showPlayButton={false}
+          />
+          <p className="name_card">{name}</p>
+          <button className="button_compound_card" onClick={handleClick}>
+            Состав
+          </button>
+          <p className="priсe_card">{price} грн</p>
+          <button
+            className="button_card"
+            onClick={() => {
+              setBouquets([allInfo]);
+              toast.info("Добавлено в корзину");
+            }}
+          >
+            В корзину
+          </button>
+        </div>
+        <div className="card__face card__face--back">
+          <p className="material_card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            dignissimos minima, illum expedita tenetur cum deserunt eius
+            perspiciatis aliquam earum ratione, ipsa neque unde nihil quasi,
+            placeat sit voluptatibus? Quos?
+          </p>
+          <button className="button_back_card" onClick={handleClick}>
+            назад
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

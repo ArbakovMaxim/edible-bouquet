@@ -1,4 +1,6 @@
 .wrapper_card {
+  perspective: 600px;
+
   width: 310px;
   height: 680px;
   background-color: #e1ede6;
@@ -46,7 +48,7 @@
   }
 
   @media (max-width: 767px) {
-    width: 200px;
+    width: 250px;
     height: 61px;
     padding: 20px 50px;
     font-size: 18px;
@@ -59,7 +61,7 @@
 }
 
 .priсe_card {
-  margin-top: 30px;
+  margin-top: 20px;
   color: #598d66;
   font-family: Raleway;
   font-size: 24px;
@@ -100,8 +102,11 @@
   }
 }
 
-.author_card {
+.button_compound_card {
+  cursor: pointer;
   margin-top: 20px;
+  border: 1px solid #598d66;
+
   color: #86928b;
   font-family: Raleway;
   font-size: 18px;
@@ -112,6 +117,11 @@
   @media (max-width: 767px) {
     font-size: 16px;
   }
+}
+
+.button_compound_card:hover {
+  color: white;
+  background-color: #598d66;
 }
 
 @keyframes spin {
@@ -132,4 +142,58 @@
   animation: spin 1s linear infinite;
   margin: 0 auto;
   margin-top: 20px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__face--back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+}
+
+.button_back_card {
+  cursor: pointer;
+  margin-top: 20px;
+  border: 1px solid #598d66;
+
+  color: #86928b;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
+}
+
+.button_back_card:hover {
+  color: white;
+  background-color: #598d66;
 }
