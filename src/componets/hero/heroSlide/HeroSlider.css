@@ -52,3 +52,15 @@
     height: 239px;
   }
 }
+
+.Slider1,
+.Slider2 {
+  @media (max-width: 1439px) {
+    max-width: 330px;
+    height: 380px;
+  }
+  @media (max-width: 767px) {
+    max-width: 195px;
+    height: 239px;
+  }
+}
