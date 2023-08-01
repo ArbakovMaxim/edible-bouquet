@@ -11,7 +11,7 @@ export const Hero = () => {
         </div>
         <div className="wrapper_hero">
           <h1 className="titleHero">
-            Съедобные букеты от <span className="spanHero">S.esh Menya</span>{" "}
+            Съедобные букеты от <span className="spanHero">S.esh Menya</span>
           </h1>
           <p className="textHero">
             Высокое качество букетов из свежих продуктов и сладостей. Уникальные

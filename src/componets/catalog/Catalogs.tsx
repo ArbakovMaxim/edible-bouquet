@@ -1,15 +1,26 @@
 import "./Catalogs.css";
 import "../ui/Container.css";
 import alco from "../../util/alcoholic.json";
+import alcoMob from "../../util/alcoholicMob.json";
 import sweet from "../../util/sweet.json";
+import sweetMob from "../../util/sweetMob.json";
 import fruits from "../../util/fruits.json";
+import fruitsMob from "../../util/fruitsMob.json";
 import { Card } from "../card/Сard";
 import { SetStateAction, useEffect, useState } from "react";
 
 export const Catalogs = () => {
-  const [catalog, setCatalog] = useState("fruits");
+  const [catalog, setCatalog] = useState("");
   const [data, setData] = useState(alco);
   const [isLoading, setIsLoading] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const isMobileScreen = window.innerWidth <= 767;
+
+  useEffect(() => {
+    setIsMobile(isMobileScreen);
+    isMobileScreen ? setCatalog("fruitsMob") : setCatalog("fruits");
+  }, [isMobileScreen]);
 
   const styles = {
     color: "white",
@@ -38,6 +49,15 @@ export const Catalogs = () => {
     if (catalog === "fruits") {
       newData = fruits;
     }
+    if (catalog === "alcoMob") {
+      newData = alcoMob;
+    }
+    if (catalog === "sweetMob") {
+      newData = sweetMob;
+    }
+    if (catalog === "fruitsMob") {
+      newData = fruitsMob;
+    }
 
     await new Promise((resolve) => setTimeout(resolve, 500));
 
@@ -58,10 +78,14 @@ export const Catalogs = () => {
           <ul className="list_category ">
             <li>
               <button
-                style={catalog === "alco" ? styles : undefined}
+                style={
+                  catalog === "alco" || catalog === "alcoMob"
+                    ? styles
+                    : undefined
+                }
                 className="button_catalog"
                 onClick={() => {
-                  setCatalog("alco");
+                  isMobile ? setCatalog("alcoMob") : setCatalog("alco");
                 }}
               >
                 Алкогольные
@@ -69,10 +93,14 @@ export const Catalogs = () => {
             </li>
             <li className="item_category">
               <button
-                style={catalog === "sweet" ? styles : undefined}
+                style={
+                  catalog === "sweet" || catalog === "sweetMob"
+                    ? styles
+                    : undefined
+                }
                 className="button_catalog"
                 onClick={() => {
-                  setCatalog("sweet");
+                  isMobile ? setCatalog("sweetMob") : setCatalog("sweet");
                 }}
               >
                 Сладкие
@@ -80,10 +108,14 @@ export const Catalogs = () => {
             </li>
             <li className="item_category">
               <button
-                style={catalog === "fruits" ? styles : undefined}
+                style={
+                  catalog === "fruits" || catalog === "fruitsMob"
+                    ? styles
+                    : undefined
+                }
                 className="button_catalog"
                 onClick={() => {
-                  setCatalog("fruits");
+                  isMobile ? setCatalog("fruits") : setCatalog("fruitsMob");
                 }}
               >
                 Фруктовые

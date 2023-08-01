@@ -50,17 +50,12 @@
   }
 
   @media (max-width: 575px) {
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 
 .spanHero {
   color: #598d66;
-  font-family: Raleway;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 110%;
 
   @media (max-width: 1439px) {
     font-size: 45px;
@@ -71,7 +66,7 @@
     font-size: 30px;
   }
   @media (max-width: 575px) {
-    font-size: 25px;
+    font-size: 35px;
   }
 }
 

@@ -3,12 +3,12 @@
     "id": "101",
     "images": [
       {
-        "original": "/edible-bouquet/img/alcoholic/slide1/fullAlc_1.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide1/fullMobAlc_1.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide1/alc_1.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide1/fullAlc_2.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide1/fullMobAlc_2.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide1/alc_1.jpg",
         "alt": "Букет с пивом"
       }
@@ -22,17 +22,17 @@
     "id": "102",
     "images": [
       {
-        "original": "/edible-bouquet/img/alcoholic/slide2/fullAlc_1.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide2/fullMobAlc_1.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide2/alc_2.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide2/fullAlc_2.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide2/fullMobAlc_2.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide2/alc_2.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide2/fullAlc_3.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide2/fullMobAlc_3.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide2/alc_2.jpg",
         "alt": "Букет с пивом"
       }
@@ -46,17 +46,17 @@
     "id": "103",
     "images": [
       {
-        "original": "/edible-bouquet/img/alcoholic/slide3/fullAlc_1.png",
+        "original": "/edible-bouquet/img/alcoholic/slide3/fullMobAlc_1.png",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide3/alc_3.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide3/fullAlc_2.png",
+        "original": "/edible-bouquet/img/alcoholic/slide3/fullMobAlc_2.png",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide3/alc_3.jpg",
         "alt": "Букет с пивом"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide3/fullAlc_3.png",
+        "original": "/edible-bouquet/img/alcoholic/slide3/fullMobAlc_3.png",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide3/alc_3.jpg",
         "alt": "Букет с пивом"
       }
@@ -70,17 +70,17 @@
     "id": "104",
     "images": [
       {
-        "original": "/edible-bouquet/img/alcoholic/slide4/fullAlc_1.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide4/fullMobAlc_1.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide4/alc_4.jpg",
         "alt": "Букет бургер"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide4/fullAlc_2.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide4/fullMobAlc_2.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide4/alc_4.jpg",
         "alt": "Букет бургер"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide4/fullAlc_3.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide4/fullMobAlc_3.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide4/alc_4.jpg",
         "alt": "Букет бургер"
       }
@@ -94,17 +94,17 @@
     "id": "105",
     "images": [
       {
-        "original": "/edible-bouquet/img/alcoholic/slide5/fullAlc_1.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide5/fullMobAlc_1.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide5/alc_5.jpg",
         "alt": "Букет с пивом и рыбкой"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide5/fullAlc_2.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide5/fullMobAlc_2.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide5/alc_5.jpg",
         "alt": "Букет с пивом и рыбкой"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide5/fullAlc_3.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide5/fullMobAlc_3.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide5/alc_5.jpg",
         "alt": "Букет с пивом и рыбкой"
       }
@@ -118,12 +118,12 @@
     "id": "106",
     "images": [
       {
-        "original": "/edible-bouquet/img/alcoholic/slide6/fullAlc_1.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide6/fullMobAlc_1.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide6/alc_6.jpg",
         "alt": "Букет с пивом булочками и колбасами"
       },
       {
-        "original": "/edible-bouquet/img/alcoholic/slide6/fullAlc_2.jpg",
+        "original": "/edible-bouquet/img/alcoholic/slide6/fullMobAlc_2.jpg",
         "thumbnail": "/edible-bouquet/img/alcoholic/slide6/alc_6.jpg",
         "alt": "Букет с пивом булочками и колбасами"
       }
