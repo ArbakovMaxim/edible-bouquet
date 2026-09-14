@@ -8,6 +8,7 @@ import { Cart } from "../Cart/Cart";
 import { Navigation } from "../navigation/Navigation";
 import { MobM } from "../../img/svg/MobM";
 import { MobMenu } from "../mobMenu/MobMenu";
+import { LangSwitch } from "../langSwitch/LangSwitch";
 
 export const Header = () => {
   const [count, setCount] = useState(0);
@@ -55,9 +56,12 @@ export const Header = () => {
               <MobM />
             </button>
           </div>
-          <div className="item_shop" onClick={handleOpenModal}>
-            <Shopping />
-            {count ? <div className="buy_shop_count">{count}</div> : null}
+          <div className="wrapper_lang_and_shop">
+            <LangSwitch />
+            <div className="item_shop" onClick={handleOpenModal}>
+              <Shopping />
+              {count ? <div className="buy_shop_count">{count}</div> : null}
+            </div>
           </div>
         </div>
         <MobMenu isOpen={isOpenMobMenu} onClose={handleMenuClose} />

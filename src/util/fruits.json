@@ -5,22 +5,22 @@
       {
         "original": "/img/fruits/slide1/fullFruits_1.jpg",
         "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
-        "alt": "Кошик з полуницею"
+        "alt": "201.alt.0"
       },
       {
         "original": "/img/fruits/slide1/fullFruits_2.jpg",
         "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
-        "alt": "Кошик з полуницею"
+        "alt": "201.alt.1"
       },
       {
         "original": "/img/fruits/slide1/fullFruits_3.jpg",
         "thumbnail": "/img/fruits/slide1/fruits_1.jpg",
-        "alt": "Кошик з полуницею"
+        "alt": "201.alt.2"
       }
     ],
-    "name": "Полуничний бум",
+    "name": "201.name",
     "count": "1",
-    "material": "Соковитий, яскравий і дуже смачний конверт не залишить байдужим нікого! <br/> Полуничний аромат змусить кожного облизнутися 😉) <br/> <br/> Склад букета: <br/>  Полуниця 🍓; <br/> Малина; <br/> Горох; <br/><br/> P.S. Сезонний",
+    "material": "201.material",
     "price": "600"
   },
   {
@@ -29,22 +29,22 @@
       {
         "original": "/img/fruits/slide2/fullFruits_1.jpg",
         "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
-        "alt": "кошик Кавун + Диня"
+        "alt": "202.alt.0"
       },
       {
         "original": "/img/fruits/slide2/fullFruits_2.jpg",
         "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
-        "alt": "кошик Кавун + Диня"
+        "alt": "202.alt.1"
       },
       {
         "original": "/img/fruits/slide2/fullFruits_3.jpg",
         "thumbnail": "/img/fruits/slide2/fruits_2.jpg",
-        "alt": "кошик Кавун + Диня"
+        "alt": "202.alt.2"
       }
     ],
-    "name": "Солодкий Серпень",
+    "name": "202.name",
     "count": "1",
-    "material": "Аромат витає по всій квартирі, аж слинки течуть 🙈 <br/><br/> Склад букета: Кавун 🍉;<br/> Диня 🥰;<br/> Виноград 🍇; <br/><br/> P.S. Сезонний",
+    "material": "202.material",
     "price": "250"
   },
   {
@@ -53,22 +53,22 @@
       {
         "original": "/img/fruits/slide3/fullFruits_1.jpg",
         "thumbnail": "/img/fruits/slide3/fruits_3.jpg",
-        "alt": "Букет із яблук і груш"
+        "alt": "203.alt.0"
       },
       {
         "original": "/img/fruits/slide3/fullFruits_2.jpg",
         "thumbnail": "/img/fruits/slide3/fruits_3.jpg",
-        "alt": "Букет із яблук і груш"
+        "alt": "203.alt.1"
       },
       {
         "original": "/img/fruits/slide3/fullFruits_3.jpg",
         "thumbnail": "/img/fruits/slide3/fruits_3.jpg",
-        "alt": "Букет із яблук і груш"
+        "alt": "203.alt.2"
       }
     ],
-    "name": "Осінній настрій",
+    "name": "203.name",
     "count": "1",
-    "material": " Подаруй заряд енергії на весь день) <br/> А також такий букетик допоможе одужати та підняти настрій 🤸 <br/> <br/> Склад букета: <br/> Яблука 🍏; <br/> Груші 🍐; <br/> Горіхи; <br/> Квіти бавовни; <br/> Крейда (можна без крейди).",
+    "material": "203.material",
     "price": "350"
   },
   {
@@ -77,22 +77,22 @@
       {
         "original": "/img/fruits/slide4/fullFruits_1.jpg",
         "thumbnail": "/img/fruits/slide4/fruits_4.jpg",
-        "alt": "Букет із сухофруктів"
+        "alt": "204.alt.0"
       },
       {
         "original": "/img/fruits/slide4/fullFruits_2.jpg",
         "thumbnail": "/img/fruits/slide4/fruits_4.jpg",
-        "alt": "Букет із сухофруктів"
+        "alt": "204.alt.1"
       },
       {
         "original": "/img/fruits/slide4/fullFruits_3.jpg",
         "thumbnail": "/img/fruits/slide4/fruits_4.jpg",
-        "alt": "Букет із сухофруктів"
+        "alt": "204.alt.2"
       }
     ],
-    "name": "Сонячний диск",
+    "name": "204.name",
     "count": "1",
-    "material": "Такий букет з ласощами підійде всім. А який аромат!!! Ммм...😍 <br/> Буяння смаку й аромату вас просто підкорять! <br/> <br/> Склад букета: <br/> Курага; <br/> Ананас 🍍; <br/> Інжир; <br/> Ківі 🥝; <br/> Кумкват мандарин 🍊; <br/> Кумкват лимон 🍋. <br/> <br/> Мега вітамінний букет!",
+    "material": "204.material",
     "price": "700"
   },
   {
@@ -101,22 +101,22 @@
       {
         "original": "/img/fruits/slide5/fullFruits_1.jpg",
         "thumbnail": "/img/fruits/slide5/fruits_5.jpg",
-        "alt": "букет Вітамінний коктейль"
+        "alt": "205.alt.0"
       },
       {
         "original": "/img/fruits/slide5/fullFruits_2.jpg",
         "thumbnail": "/img/fruits/slide5/fruits_5.jpg",
-        "alt": "букет Вітамінний коктейль"
+        "alt": "205.alt.1"
       },
       {
         "original": "/img/fruits/slide5/fullFruits_3.jpg",
         "thumbnail": "/img/fruits/slide5/fruits_5.jpg",
-        "alt": "букет Вітамінний коктейль"
+        "alt": "205.alt.2"
       }
     ],
-    "name": "Вітамінний коктейль",
+    "name": "205.name",
     "count": "1",
-    "material": "Ніжний, яскравий і ароматний букетик, повний вітамінів) <br/> <br/> Склад букета: <br/> Мед (у цьому букеті полуничний)🍯; <br/> <br/> Апельсини; <br/> Мандарини 🍊; <br/> Нектарин; <br/> Лимон 🍋; <br/> Гранат; <br/> Імбир; <br/> <br/> Прикраси (бавовна, колоски).",
+    "material": "205.material",
     "price": "650"
   },
   {
@@ -125,22 +125,22 @@
       {
         "original": "/img/fruits/slide6/fullFruits_1.jpg",
         "thumbnail": "/img/fruits/slide6/fruits_6.jpg",
-        "alt": "Овочевий кошик"
+        "alt": "206.alt.0"
       },
       {
         "original": "/img/fruits/slide6/fullFruits_2.jpg",
         "thumbnail": "/img/fruits/slide6/fruits_6.jpg",
-        "alt": "Овочевий кошик"
+        "alt": "206.alt.1"
       },
       {
         "original": "/img/fruits/slide6/fullFruits_3.jpg",
         "thumbnail": "/img/fruits/slide6/fruits_6.jpg",
-        "alt": "Овочевий кошик"
+        "alt": "206.alt.2"
       }
     ],
-    "name": "Овочевий кошик",
+    "name": "206.name",
     "count": "1",
-    "material": "Такий кошик — не лише корисний, а й оригінальний подарунок. І не залишить байдужою справжню жінку. <br/> <br/>  Склад букета: <br/> Перець болгарський; <br/> Помідори 🍅; <br/> Гострий перець 🌶️; <br/> Часник Морква🥕; <br/> Салат дубовий🥦; <br/> Салат ромен 🥬",
+    "material": "206.material",
     "price": "1200"
   }
 ]

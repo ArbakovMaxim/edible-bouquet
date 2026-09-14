@@ -8,16 +8,14 @@ import fruits from "../../util/fruits.json";
 import fruitsMob from "../../util/fruitsMob.json";
 import { Card } from "../card/Сard";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Bouquet } from "../../state/BouquetsState";
 import { withAssetUrls } from "../../util/assetUrl";
 
 type Category = "alco" | "sweet" | "fruits";
 
-const categories: { key: Category; label: string }[] = [
-  { key: "alco", label: "Алкогольні" },
-  { key: "sweet", label: "Солодкі" },
-  { key: "fruits", label: "Фруктові" },
-];
+/** Подписи берём из словаря, поэтому храним только ключи категорий. */
+const categories: Category[] = ["alco", "sweet", "fruits"];
 
 const catalogData: Record<Category, { desktop: Bouquet[]; mobile: Bouquet[] }> =
   {
@@ -27,6 +25,7 @@ const catalogData: Record<Category, { desktop: Bouquet[]; mobile: Bouquet[] }> =
   };
 
 export const Catalogs = () => {
+  const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 767);
   const [category, setCategory] = useState<Category>("fruits");
   const [data, setData] = useState<Bouquet[]>([]);
@@ -67,16 +66,16 @@ export const Catalogs = () => {
     <section className="section section_catalog" id="Catalog">
       <div className="container">
         <div className="wrapper_category">
-          <h2 className="title_category">Букети</h2>
+          <h2 className="title_category">{t("catalog.title")}</h2>
           <ul className="list_category ">
-            {categories.map(({ key, label }, index) => (
+            {categories.map((key, index) => (
               <li key={key} className={index === 0 ? undefined : "item_category"}>
                 <button
                   style={category === key ? styles : undefined}
                   className="button_catalog"
                   onClick={() => setCategory(key)}
                 >
-                  {label}
+                  {t(`catalog.${key}`)}
                 </button>
               </li>
             ))}

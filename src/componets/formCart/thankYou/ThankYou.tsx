@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Close } from "../../../img/svg/Close";
 import "../../ui/Container.css";
 import "./ThankYou.css";
@@ -9,6 +10,7 @@ interface Prop {
 }
 
 export const ThankYou = ({ onClose, setShowThankYouModal }: Prop) => {
+  const { t } = useTranslation();
   const handleClose = useCallback(() => {
     onClose();
     setShowThankYouModal(false);
@@ -34,10 +36,8 @@ export const ThankYou = ({ onClose, setShowThankYouModal }: Prop) => {
           <Close />
         </button>
         <div className="wrapper_text_thanks">
-          <p className="text_thanks_one">Ваше замовлення успішно прийнято.</p>
-          <p className="text_thanks">
-            Ми скоро з вами зв’яжемося для уточнення замовлення.
-          </p>
+          <p className="text_thanks_one">{t("thankYou.title")}</p>
+          <p className="text_thanks">{t("thankYou.text")}</p>
         </div>
       </div>
     </div>

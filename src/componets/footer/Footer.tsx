@@ -1,11 +1,14 @@
 import "./Footer.css";
 import "../ui/Container.css";
+import { useTranslation } from "react-i18next";
 import { Star } from "../../img/svg/Star";
 import { FaceBook } from "../../img/svg/FaceBook";
 import { Instagram } from "../../img/svg/Instagram";
 import { YouTube } from "../../img/svg/YouTube";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="container container_footer">
@@ -19,21 +22,21 @@ export const Footer = () => {
               <a href="tel:+380635*34545" className="tel_footer">
                 +38 (063) 5*3-45-45
               </a>
-              <p className="text_footer">Майстерня</p>
+              <p className="text_footer">{t("footer.workshop")}</p>
             </div>
           </div>
           <div className="wrapper_bouquets_and_aboutUS_footer">
             <div className="wrapper_bouquets_footer">
-              <h2 className="title_block_footer">Букети</h2>
+              <h2 className="title_block_footer">{t("footer.bouquets")}</h2>
               <ul>
-                <li className="text_block_footer">Алкогольні</li>
-                <li className="text_block_footer">Солодкі</li>
-                <li className="text_block_footer">Фруктові</li>
+                <li className="text_block_footer">{t("catalog.alco")}</li>
+                <li className="text_block_footer">{t("catalog.sweet")}</li>
+                <li className="text_block_footer">{t("catalog.fruits")}</li>
               </ul>
             </div>
             <div className="wrapper_aboutUS_footer">
-              <h2 className="title_block_footer">Про нас</h2>
-              <p className="text_block_footer">Майстер</p>
+              <h2 className="title_block_footer">{t("footer.about")}</h2>
+              <p className="text_block_footer">{t("footer.master")}</p>
             </div>
           </div>
         </div>
@@ -56,7 +59,7 @@ export const Footer = () => {
             </li>
           </ul>
           <p className="text_in_soc_block_footer">S.esh Menya ®</p>
-          <p className="text_in_soc_block_footer">All rights reserved</p>
+          <p className="text_in_soc_block_footer">{t("footer.rights")}</p>
         </div>
       </div>
     </footer>

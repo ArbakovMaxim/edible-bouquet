@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Close } from "../../img/svg/Close";
 import { Navigation } from "../navigation/Navigation";
+import { LangSwitch } from "../langSwitch/LangSwitch";
 import "./MobMenu.css";
 import ReactDOM from "react-dom";
 
@@ -30,6 +31,7 @@ export const MobMenu = ({ isOpen, onClose }: Props) => {
           <Close />
         </button>
         <Navigation onClose={onClose} />
+        <LangSwitch variant="mobile" />
       </div>
     </div>,
     modalRoot

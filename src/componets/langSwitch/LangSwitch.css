@@ -1,0 +1,58 @@
+.lang_switch {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.lang_switch__button {
+  padding: 2px 5px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: transparent;
+  cursor: pointer;
+
+  color: #8aa890;
+  font-family: Raleway;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.02em;
+
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.lang_switch__button:hover,
+.lang_switch__button:focus-visible {
+  color: #598d66;
+}
+
+.lang_switch__button--active {
+  color: #598d66;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* На мобильных переключатель живёт в бургер-меню */
+@media (max-width: 575px) {
+  .lang_switch--header {
+    display: none;
+  }
+}
+
+.lang_switch--mobile {
+  justify-content: center;
+  margin-top: 24px;
+  gap: 8px;
+}
+
+.lang_switch--mobile .lang_switch__button {
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.lang_switch--mobile .lang_switch__button--active {
+  background-color: #598d66;
+  color: #fff;
+  text-decoration: none;
+}

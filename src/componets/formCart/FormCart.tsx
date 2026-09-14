@@ -1,6 +1,14 @@
-import React, { useState } from "react";
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import {
+  Formik,
+  Form,
+  Field,
+  ErrorMessage,
+  FormikHelpers,
+  FormikProps,
+} from "formik";
 import * as Yup from "yup";
+import { useTranslation } from "react-i18next";
 import { useBouquetsStore } from "../../state/BouquetsState";
 import { toast } from "react-toastify";
 import "./FormCart.css";
@@ -42,30 +50,35 @@ const getMinDate = () => {
   return minDate;
 };
 
-const validationSchema = Yup.object().shape({
-  firstName: Yup.string()
-    .required("Обов’язкове поле")
-    .matches(/^[а-яА-ЯіІїЇєЄґҐa-zA-Z'-]{1,15}$/, "Лише літери, не більше 15 символів")
-    .max(15, "Не більше 15 символів"),
-  lastName: Yup.string()
-    .required("Обов’язкове поле")
-    .matches(/^[а-яА-ЯіІїЇєЄґҐa-zA-Z'-]{1,15}$/, "Лише літери, не більше 15 символів")
-    .max(15, "Не більше 15 символів"),
-  phone: Yup.string()
-    .required("Обов’язкове поле")
-    .matches(
-      /^(?:\+?38)?(?:\([0-9]{3}\)|[0-9]{3})[0-9]{7}$/,
-      "Невірний формат номера"
-    ),
-  messenger: Yup.string(),
-  comment: Yup.string().max(300, "Не більше 300 символів"),
-  selectedDate: Yup.date()
-    .nullable()
-    .required("Оберіть дату доставки")
-    .min(getMinDate(), "Доставка можлива не раніше ніж через 3 дні"),
-});
+/**
+ * Formik хранит тексты ошибок в своём состоянии с момента последней проверки,
+ * поэтому при смене языка уже показанные сообщения остались бы на прежнем.
+ * Перезапускаем валидацию — но только если ошибки реально показаны.
+ */
+const RevalidateOnLanguageChange = ({
+  language,
+  formik,
+}: {
+  language: string;
+  formik: FormikProps<FormData>;
+}) => {
+  const previousLanguage = useRef(language);
+  const { validateForm, errors, submitCount } = formik;
+
+  useEffect(() => {
+    if (previousLanguage.current === language) return;
+    previousLanguage.current = language;
+
+    if (submitCount > 0 || Object.keys(errors).length > 0) {
+      validateForm();
+    }
+  }, [language, validateForm, errors, submitCount]);
+
+  return null;
+};
 
 export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
+  const { t, i18n } = useTranslation();
   const bouquets = useBouquetsStore((state) => state.bouquets);
   const removeAll = useBouquetsStore((state) => state.removeAll);
   const [hasFirstNameText, setHasFirstNameText] = useState(false);
@@ -78,12 +91,46 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
 
   const minDate = getMinDate();
 
+  // Схему пересобираем при смене языка, иначе тексты ошибок останутся на прежнем
+  const validationSchema = useMemo(
+    () =>
+      Yup.object().shape({
+        firstName: Yup.string()
+          .required(t("form.validation.required"))
+          .matches(
+            /^[а-яА-ЯіІїЇєЄґҐa-zA-Z'-]{1,15}$/,
+            t("form.validation.lettersOnly")
+          )
+          .max(15, t("form.validation.max15")),
+        lastName: Yup.string()
+          .required(t("form.validation.required"))
+          .matches(
+            /^[а-яА-ЯіІїЇєЄґҐa-zA-Z'-]{1,15}$/,
+            t("form.validation.lettersOnly")
+          )
+          .max(15, t("form.validation.max15")),
+        phone: Yup.string()
+          .required(t("form.validation.required"))
+          .matches(
+            /^(?:\+?38)?(?:\([0-9]{3}\)|[0-9]{3})[0-9]{7}$/,
+            t("form.validation.phoneFormat")
+          ),
+        messenger: Yup.string(),
+        comment: Yup.string().max(300, t("form.validation.max300")),
+        selectedDate: Yup.date()
+          .nullable()
+          .required(t("form.validation.dateRequired"))
+          .min(getMinDate(), t("form.validation.dateMin")),
+      }),
+    [t]
+  );
+
   const onSubmit: OnSubmitType = async (
     values: FormData,
     formikHelpers: FormikHelpers<FormData>
   ) => {
     if (bouquets.length === 0) {
-      return toast.info("Кошик порожній");
+      return toast.info(t("cart.empty"));
     }
 
     setIsSending(true);
@@ -99,8 +146,10 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
           messenger: values.messenger,
           comment: values.comment,
           selectedDate: values.selectedDate,
+          language: i18n.resolvedLanguage,
           items: bouquets.map((bouquet) => ({
-            name: bouquet.name,
+            // в состоянии лежат ключи каталога — отправляем читаемое название
+            name: t(bouquet.name, { ns: "catalog" }),
             price: bouquet.price,
             count: bouquet.count,
           })),
@@ -116,7 +165,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
       setShowThankYouModal(true);
     } catch (error) {
       console.error("Не вдалося надіслати замовлення:", error);
-      toast.error("Не вдалося надіслати замовлення. Зателефонуйте нам, будь ласка.");
+      toast.error(t("form.error"));
     } finally {
       setIsSending(false);
     }
@@ -130,14 +179,18 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
           setShowThankYouModal={setShowThankYouModal}
         />
       ) : null}
-      <h2 className="title_form_cart">Ваші контакти</h2>
+      <h2 className="title_form_cart">{t("form.title")}</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={onSubmit}
       >
-        {({ values, setFieldValue }) => (
+        {(formik) => (
           <Form autoComplete="off">
+            <RevalidateOnLanguageChange
+              language={i18n.resolvedLanguage || ""}
+              formik={formik}
+            />
             <div className="wrapper_input">
               <div className="form-field">
                 <Field
@@ -159,7 +212,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasFirstNameText ? "input-label-active" : ""
                   }`}
                 >
-                  Ім’я*
+                  {t("form.firstName")}
                 </label>
                 <ErrorMessage
                   name="firstName"
@@ -188,7 +241,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasLastNameText ? "input-label-active" : ""
                   }`}
                 >
-                  Прізвище*
+                  {t("form.lastName")}
                 </label>
                 <ErrorMessage
                   name="lastName"
@@ -219,7 +272,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasPhoneText ? "input-label-active" : ""
                   }`}
                 >
-                  Телефон*
+                  {t("form.phone")}
                 </label>
                 <ErrorMessage
                   name="phone"
@@ -248,7 +301,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasMessengerText ? "input-label-active" : ""
                   }`}
                 >
-                  Телеграм або Вайбер
+                  {t("form.messenger")}
                 </label>
                 <ErrorMessage
                   name="messenger"
@@ -261,10 +314,10 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
             <div className="form-field form-field_piker">
               <DatePicker
                 className="data_picker"
-                selected={values.selectedDate}
-                onChange={(date) => setFieldValue("selectedDate", date)}
+                selected={formik.values.selectedDate}
+                onChange={(date) => formik.setFieldValue("selectedDate", date)}
                 dateFormat="dd.MM.yyyy"
-                placeholderText="Оберіть дату*"
+                placeholderText={t("form.date")}
                 minDate={minDate}
                 withPortal
                 portalId="root-portal"
@@ -296,7 +349,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                   hasCommentText ? "input-label-active" : ""
                 }`}
               >
-                Коментар
+                {t("form.comment")}
               </label>
               <ErrorMessage
                 name="comment"
@@ -310,7 +363,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
               type="submit"
               disabled={isSending}
             >
-              {isSending ? "Надсилаємо..." : "Підтвердити замовлення"}
+              {isSending ? t("form.sending") : t("form.submit")}
             </button>
           </Form>
         )}

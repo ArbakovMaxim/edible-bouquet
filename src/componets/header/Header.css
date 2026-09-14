@@ -82,11 +82,12 @@
 
 .wraper_navigation_shop {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 470px;
+  width: 520px;
 
   @media (max-width: 1439px) {
-    width: 445px;
+    width: 500px;
   }
 
   @media (max-width: 767px) {
@@ -120,4 +121,19 @@
   width: 30px;
   height: 30px;
   background-color: transparent;
+}
+
+/* Переключатель языка прижат к корзине, чтобы не сбивать центровку навигации */
+.wrapper_lang_and_shop {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* отделяем от последнего пункта меню, чтобы навигация не читалась слитно */
+  margin-left: 16px;
+}
+
+@media (max-width: 575px) {
+  .wrapper_lang_and_shop {
+    margin-left: 0;
+  }
 }

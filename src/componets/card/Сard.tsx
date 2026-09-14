@@ -4,6 +4,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import { useState, useEffect } from "react";
 import { useBouquetsStore } from "../../state/BouquetsState";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 interface Props {
   images: Array<{ original: string; thumbnail: string; alt: string }>;
@@ -21,6 +22,9 @@ interface Props {
 }
 
 export const Card = ({ images, name, material, price, allInfo }: Props) => {
+  const { t } = useTranslation();
+  // name/material/alt приходят как ключи каталога — переводим при отображении
+  const tc = useTranslation("catalog").t;
   const [isLoaded, setIsLoaded] = useState(false);
   const [isFlipped, setIsFlipped] = useState(false);
   const setBouquets = useBouquetsStore((state) => state.setBouquets);
@@ -65,35 +69,42 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
       <div className={`card ${isFlipped ? "is-flipped" : ""}`}>
         <div className="card__face">
           <ReactImageGallery
-            items={images}
+            items={images.map((img) => ({
+              ...img,
+              // библиотека читает originalAlt/thumbnailAlt, поле alt она игнорирует
+              originalAlt: tc(img.alt),
+              thumbnailAlt: tc(img.alt),
+            }))}
             showFullscreenButton={false}
             showNav={false}
             showBullets={true}
             showThumbnails={false}
             showPlayButton={false}
           />
-          <p className="name_card">{name}</p>
+          <p className="name_card">{tc(name)}</p>
           <button className="button_compound_card" onClick={handleClick}>
-            Склад
+            {t("card.compound")}
           </button>
-          <p className="priсe_card">{price} грн</p>
+          <p className="priсe_card">
+            {price} {t("card.currency")}
+          </p>
           <button
             className="button_card"
             onClick={() => {
               setBouquets([allInfo]);
-              toast.info("Додано до кошика");
+              toast.info(t("card.added"));
             }}
           >
-            До кошика
+            {t("card.addToCart")}
           </button>
         </div>
         <div className="card__face card__face--back">
           <p
             className="material_card"
-            dangerouslySetInnerHTML={{ __html: material }}
+            dangerouslySetInnerHTML={{ __html: tc(material) }}
           />
           <button className="button_back_card " onClick={handleClick}>
-            назад
+            {t("card.back")}
           </button>
         </div>
       </div>

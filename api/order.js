@@ -33,7 +33,7 @@ const formatDate = (value) => {
   });
 };
 
-const buildMessage = ({ customer, items, total, deliveryDate }) => {
+const buildMessage = ({ customer, items, total, deliveryDate, language }) => {
   const lines = [
     "🎁 <b>Нове замовлення</b>",
     "",
@@ -47,7 +47,13 @@ const buildMessage = ({ customer, items, total, deliveryDate }) => {
     lines.push(`<b>Месенджер:</b> ${escapeHtml(customer.messenger)}`);
   }
 
-  lines.push(`<b>Дата доставки:</b> ${escapeHtml(deliveryDate)}`, "", "<b>Букети:</b>");
+  lines.push(`<b>Дата доставки:</b> ${escapeHtml(deliveryDate)}`);
+
+  if (language) {
+    lines.push(`<b>Мова:</b> ${escapeHtml(language === "ru" ? "російська" : "українська")}`);
+  }
+
+  lines.push("", "<b>Букети:</b>");
 
   items.forEach((item, index) => {
     lines.push(
@@ -90,6 +96,7 @@ module.exports = async (req, res) => {
     const messenger = clean(body.messenger, MAX_LEN.messenger);
     const comment = clean(body.comment, MAX_LEN.comment);
     const deliveryDate = formatDate(body.selectedDate);
+    const language = body.language === "ru" ? "ru" : "uk";
 
     const rawItems = Array.isArray(body.items) ? body.items : [];
 
@@ -127,6 +134,7 @@ module.exports = async (req, res) => {
       items,
       total,
       deliveryDate,
+      language,
     });
 
     const response = await fetch(

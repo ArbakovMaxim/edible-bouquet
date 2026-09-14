@@ -31,3 +31,8 @@
   line-height: normal;
   text-decoration: none;
 }
+
+/* Пункты меню не переносим — иначе хедер прыгает по высоте */
+.link_header {
+  white-space: nowrap;
+}
