@@ -1,3 +1,4 @@
+import { useCallback, useEffect } from "react";
 import { Close } from "../../../img/svg/Close";
 import "../../ui/Container.css";
 import "./ThankYou.css";
@@ -8,29 +9,28 @@ interface Prop {
 }
 
 export const ThankYou = ({ onClose, setShowThankYouModal }: Prop) => {
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      onClose();
-      setShowThankYouModal(false);
-    }
-  });
+  const handleClose = useCallback(() => {
+    onClose();
+    setShowThankYouModal(false);
+  }, [onClose, setShowThankYouModal]);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [handleClose]);
 
   return (
-    <div
-      className="modal_bg"
-      onClick={() => {
-        onClose();
-        setShowThankYouModal(false);
-      }}
-    >
-      <div className="thank_you_container">
-        <button
-          className="button_close_thanks"
-          onClick={() => {
-            onClose();
-            setShowThankYouModal(false);
-          }}
-        >
+    <div className="modal_bg" onClick={handleClose}>
+      <div
+        className="thank_you_container"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button className="button_close_thanks" onClick={handleClose}>
           <Close />
         </button>
         <div className="wrapper_text_thanks">

@@ -7,68 +7,61 @@ import sweetMob from "../../util/sweetMob.json";
 import fruits from "../../util/fruits.json";
 import fruitsMob from "../../util/fruitsMob.json";
 import { Card } from "../card/Сard";
-import { SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Bouquet } from "../../state/BouquetsState";
+import { withAssetUrls } from "../../util/assetUrl";
+
+type Category = "alco" | "sweet" | "fruits";
+
+const categories: { key: Category; label: string }[] = [
+  { key: "alco", label: "Алкогольные" },
+  { key: "sweet", label: "Сладкие" },
+  { key: "fruits", label: "Фруктовые" },
+];
+
+const catalogData: Record<Category, { desktop: Bouquet[]; mobile: Bouquet[] }> =
+  {
+    alco: { desktop: withAssetUrls(alco), mobile: withAssetUrls(alcoMob) },
+    sweet: { desktop: withAssetUrls(sweet), mobile: withAssetUrls(sweetMob) },
+    fruits: { desktop: withAssetUrls(fruits), mobile: withAssetUrls(fruitsMob) },
+  };
 
 export const Catalogs = () => {
-  const [catalog, setCatalog] = useState("");
-  const [data, setData] = useState(alco);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 767);
+  const [category, setCategory] = useState<Category>("fruits");
+  const [data, setData] = useState<Bouquet[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  const isMobileScreen = window.innerWidth <= 767;
 
   useEffect(() => {
-    setIsMobile(isMobileScreen);
-    isMobileScreen ? setCatalog("fruitsMob") : setCatalog("fruits");
-  }, [isMobileScreen]);
+    const handleResize = () => setIsMobile(window.innerWidth <= 767);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const styles = {
     color: "white",
     backgroundColor: "#598d66",
   };
 
-  const loadData = async () => {
+  useEffect(() => {
+    let cancelled = false;
     setIsLoading(false);
 
-    let newData: SetStateAction<
-      {
-        id: string;
-        images: { original: string; thumbnail: string; alt: string }[];
-        name: string;
-        count: string;
-        material: string;
-        price: string;
-      }[]
-    > = [];
-    if (catalog === "alco") {
-      newData = alco;
-    }
-    if (catalog === "sweet") {
-      newData = sweet;
-    }
-    if (catalog === "fruits") {
-      newData = fruits;
-    }
-    if (catalog === "alcoMob") {
-      newData = alcoMob;
-    }
-    if (catalog === "sweetMob") {
-      newData = sweetMob;
-    }
-    if (catalog === "fruitsMob") {
-      newData = fruitsMob;
-    }
+    const newData = isMobile
+      ? catalogData[category].mobile
+      : catalogData[category].desktop;
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    const timer = setTimeout(() => {
+      if (cancelled) return;
+      setData(newData);
+      setIsLoading(true);
+    }, 500);
 
-    setData(newData);
-    setIsLoading(true);
-  };
-
-  useEffect(() => {
-    loadData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [catalog]);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+    };
+  }, [category, isMobile]);
 
   return (
     <section className="section section_catalog" id="Catalog">
@@ -76,51 +69,17 @@ export const Catalogs = () => {
         <div className="wrapper_category">
           <h2 className="title_category">Букеты</h2>
           <ul className="list_category ">
-            <li>
-              <button
-                style={
-                  catalog === "alco" || catalog === "alcoMob"
-                    ? styles
-                    : undefined
-                }
-                className="button_catalog"
-                onClick={() => {
-                  isMobile ? setCatalog("alcoMob") : setCatalog("alco");
-                }}
-              >
-                Алкогольные
-              </button>
-            </li>
-            <li className="item_category">
-              <button
-                style={
-                  catalog === "sweet" || catalog === "sweetMob"
-                    ? styles
-                    : undefined
-                }
-                className="button_catalog"
-                onClick={() => {
-                  isMobile ? setCatalog("sweetMob") : setCatalog("sweet");
-                }}
-              >
-                Сладкие
-              </button>
-            </li>
-            <li className="item_category">
-              <button
-                style={
-                  catalog === "fruits" || catalog === "fruitsMob"
-                    ? styles
-                    : undefined
-                }
-                className="button_catalog"
-                onClick={() => {
-                  isMobile ? setCatalog("fruits") : setCatalog("fruitsMob");
-                }}
-              >
-                Фруктовые
-              </button>
-            </li>
+            {categories.map(({ key, label }, index) => (
+              <li key={key} className={index === 0 ? undefined : "item_category"}>
+                <button
+                  style={category === key ? styles : undefined}
+                  className="button_catalog"
+                  onClick={() => setCategory(key)}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <ul className="list_bouquet_category">

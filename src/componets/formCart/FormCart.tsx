@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { useBouquetsStore } from "../../state/BouquetsState";
@@ -35,6 +35,13 @@ interface Prop {
   onClose: () => void;
 }
 
+const getMinDate = () => {
+  const minDate = new Date();
+  minDate.setDate(minDate.getDate() + 3);
+  minDate.setHours(0, 0, 0, 0);
+  return minDate;
+};
+
 const validationSchema = Yup.object().shape({
   firstName: Yup.string()
     .required("Обязательное поле")
@@ -52,6 +59,10 @@ const validationSchema = Yup.object().shape({
     ),
   messenger: Yup.string(),
   comment: Yup.string().max(300, "Не более 300 символов"),
+  selectedDate: Yup.date()
+    .nullable()
+    .required("Выберите дату доставки")
+    .min(getMinDate(), "Доставка возможна не раньше чем через 3 дня"),
 });
 
 export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
@@ -62,39 +73,54 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
   const [hasPhoneText, setHasPhoneText] = useState(false);
   const [hasMessengerText, setHasMessengerText] = useState(false);
   const [hasCommentText, setHasCommentText] = useState(false);
-  const [buyBouquets, setBuyBouquets] = useState({});
   const [showThankYouModal, setShowThankYouModal] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
-  const today = new Date();
-
-  const minDate = new Date();
-  minDate.setDate(today.getDate() + 3);
+  const minDate = getMinDate();
 
   const onSubmit: OnSubmitType = async (
     values: FormData,
     formikHelpers: FormikHelpers<FormData>
   ) => {
     if (bouquets.length === 0) {
-      return toast.info("Корина пустая");
+      return toast.info("Корзина пустая");
     }
-    console.log("заказ:", buyBouquets);
-    console.log("валуе:", values);
-    removeAll();
-    formikHelpers.resetForm();
-    setShowThankYouModal(true);
-  };
 
-  useEffect(() => {
-    const names: string[] = bouquets.map((bouquet) => bouquet.name);
-    const prices: string[] = bouquets.map((bouquet) => bouquet.price);
-    const counts: string[] = bouquets.map((bouquet) => bouquet.count);
-    const order = {
-      names,
-      prices,
-      counts,
-    };
-    setBuyBouquets(order);
-  }, [bouquets]);
+    setIsSending(true);
+
+    try {
+      const response = await fetch("/api/order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: values.firstName,
+          lastName: values.lastName,
+          phone: values.phone,
+          messenger: values.messenger,
+          comment: values.comment,
+          selectedDate: values.selectedDate,
+          items: bouquets.map((bouquet) => ({
+            name: bouquet.name,
+            price: bouquet.price,
+            count: bouquet.count,
+          })),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      removeAll();
+      formikHelpers.resetForm();
+      setShowThankYouModal(true);
+    } catch (error) {
+      console.error("Не удалось отправить заказ:", error);
+      toast.error("Не удалось отправить заказ. Позвоните нам, пожалуйста.");
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   return (
     <div className="wraper_form">
@@ -243,6 +269,11 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                 withPortal
                 portalId="root-portal"
               />
+              <ErrorMessage
+                name="selectedDate"
+                component="div"
+                className="error-message"
+              />
             </div>
 
             <div className="form-field">
@@ -274,8 +305,12 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
               />
             </div>
 
-            <button className="buttom_submit_form" type="submit">
-              Подтвердить заказ
+            <button
+              className="buttom_submit_form"
+              type="submit"
+              disabled={isSending}
+            >
+              {isSending ? "Отправляем..." : "Подтвердить заказ"}
             </button>
           </Form>
         )}
