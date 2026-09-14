@@ -19,21 +19,21 @@ export const Footer = () => {
               <a href="tel:+380635*34545" className="tel_footer">
                 +38 (063) 5*3-45-45
               </a>
-              <p className="text_footer">Мастерская</p>
+              <p className="text_footer">Майстерня</p>
             </div>
           </div>
           <div className="wrapper_bouquets_and_aboutUS_footer">
             <div className="wrapper_bouquets_footer">
-              <h2 className="title_block_footer">Букеты</h2>
+              <h2 className="title_block_footer">Букети</h2>
               <ul>
-                <li className="text_block_footer">Алкогольные</li>
-                <li className="text_block_footer">Сладкие</li>
-                <li className="text_block_footer">Фруктовые</li>
+                <li className="text_block_footer">Алкогольні</li>
+                <li className="text_block_footer">Солодкі</li>
+                <li className="text_block_footer">Фруктові</li>
               </ul>
             </div>
             <div className="wrapper_aboutUS_footer">
-              <h2 className="title_block_footer">О нас</h2>
-              <p className="text_block_footer">Мастер</p>
+              <h2 className="title_block_footer">Про нас</h2>
+              <p className="text_block_footer">Майстер</p>
             </div>
           </div>
         </div>

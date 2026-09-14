@@ -11,15 +11,16 @@ export const Hero = () => {
         </div>
         <div className="wrapper_hero">
           <h1 className="titleHero">
-            Съедобные букеты от <span className="spanHero">S.esh Menya</span>
+            Їстівні букети від <span className="spanHero">S.esh Menya</span>
           </h1>
           <p className="textHero">
-            Высокое качество букетов из свежих продуктов и сладостей. Уникальные
-            произведения искуства, заменят обычные букеты, доступные цены.
+            Висока якість букетів зі свіжих продуктів і солодощів. Унікальні
+            витвори мистецтва, які замінять звичайні букети, за доступними
+            цінами.
           </p>
           <button className="button_hero">
             <a className="link_hero" href="#New">
-              Рекомендуемые
+              Рекомендовані
             </a>
           </button>
         </div>

@@ -26,7 +26,7 @@ const formatDate = (value) => {
   if (value === null || value === undefined || value === "") return null;
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return null;
-  return date.toLocaleDateString("ru-RU", {
+  return date.toLocaleDateString("uk-UA", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
@@ -35,19 +35,19 @@ const formatDate = (value) => {
 
 const buildMessage = ({ customer, items, total, deliveryDate }) => {
   const lines = [
-    "🎁 <b>Новый заказ</b>",
+    "🎁 <b>Нове замовлення</b>",
     "",
-    `<b>Имя:</b> ${escapeHtml(customer.firstName)} ${escapeHtml(
+    `<b>Імʼя:</b> ${escapeHtml(customer.firstName)} ${escapeHtml(
       customer.lastName
     )}`,
     `<b>Телефон:</b> ${escapeHtml(customer.phone)}`,
   ];
 
   if (customer.messenger) {
-    lines.push(`<b>Мессенджер:</b> ${escapeHtml(customer.messenger)}`);
+    lines.push(`<b>Месенджер:</b> ${escapeHtml(customer.messenger)}`);
   }
 
-  lines.push(`<b>Дата доставки:</b> ${escapeHtml(deliveryDate)}`, "", "<b>Букеты:</b>");
+  lines.push(`<b>Дата доставки:</b> ${escapeHtml(deliveryDate)}`, "", "<b>Букети:</b>");
 
   items.forEach((item, index) => {
     lines.push(
@@ -57,10 +57,10 @@ const buildMessage = ({ customer, items, total, deliveryDate }) => {
     );
   });
 
-  lines.push("", `<b>Итого: ${total} грн</b>`);
+  lines.push("", `<b>Разом: ${total} грн</b>`);
 
   if (customer.comment) {
-    lines.push("", `<b>Комментарий:</b> ${escapeHtml(customer.comment)}`);
+    lines.push("", `<b>Коментар:</b> ${escapeHtml(customer.comment)}`);
   }
 
   return lines.join("\n");
@@ -94,15 +94,15 @@ module.exports = async (req, res) => {
     const rawItems = Array.isArray(body.items) ? body.items : [];
 
     if (!firstName || !lastName || !phone) {
-      return res.status(400).json({ error: "Не заполнены обязательные поля" });
+      return res.status(400).json({ error: "Не заповнені обовʼязкові поля" });
     }
 
     if (!deliveryDate) {
-      return res.status(400).json({ error: "Некорректная дата доставки" });
+      return res.status(400).json({ error: "Некоректна дата доставки" });
     }
 
     if (rawItems.length === 0 || rawItems.length > MAX_ITEMS) {
-      return res.status(400).json({ error: "Некорректный состав заказа" });
+      return res.status(400).json({ error: "Некоректний склад замовлення" });
     }
 
     const items = rawItems.map((item) => {
@@ -117,7 +117,7 @@ module.exports = async (req, res) => {
     });
 
     if (items.some((item) => item.count <= 0 || item.price <= 0)) {
-      return res.status(400).json({ error: "Некорректный состав заказа" });
+      return res.status(400).json({ error: "Некоректний склад замовлення" });
     }
 
     const total = items.reduce((sum, item) => sum + item.sum, 0);
@@ -145,12 +145,12 @@ module.exports = async (req, res) => {
     if (!response.ok) {
       const details = await response.text();
       console.error("Telegram API error:", response.status, details);
-      return res.status(502).json({ error: "Не удалось отправить заказ" });
+      return res.status(502).json({ error: "Не вдалося надіслати замовлення" });
     }
 
     return res.status(200).json({ ok: true });
   } catch (error) {
     console.error("Order handler failed:", error);
-    return res.status(500).json({ error: "Внутренняя ошибка" });
+    return res.status(500).json({ error: "Внутрішня помилка" });
   }
 };

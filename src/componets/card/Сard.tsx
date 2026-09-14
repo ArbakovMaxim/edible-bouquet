@@ -74,17 +74,17 @@ export const Card = ({ images, name, material, price, allInfo }: Props) => {
           />
           <p className="name_card">{name}</p>
           <button className="button_compound_card" onClick={handleClick}>
-            Состав
+            Склад
           </button>
           <p className="priсe_card">{price} грн</p>
           <button
             className="button_card"
             onClick={() => {
               setBouquets([allInfo]);
-              toast.info("Добавлено в корзину");
+              toast.info("Додано до кошика");
             }}
           >
-            В корзину
+            До кошика
           </button>
         </div>
         <div className="card__face card__face--back">

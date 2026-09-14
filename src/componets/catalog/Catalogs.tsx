@@ -14,9 +14,9 @@ import { withAssetUrls } from "../../util/assetUrl";
 type Category = "alco" | "sweet" | "fruits";
 
 const categories: { key: Category; label: string }[] = [
-  { key: "alco", label: "Алкогольные" },
-  { key: "sweet", label: "Сладкие" },
-  { key: "fruits", label: "Фруктовые" },
+  { key: "alco", label: "Алкогольні" },
+  { key: "sweet", label: "Солодкі" },
+  { key: "fruits", label: "Фруктові" },
 ];
 
 const catalogData: Record<Category, { desktop: Bouquet[]; mobile: Bouquet[] }> =
@@ -67,7 +67,7 @@ export const Catalogs = () => {
     <section className="section section_catalog" id="Catalog">
       <div className="container">
         <div className="wrapper_category">
-          <h2 className="title_category">Букеты</h2>
+          <h2 className="title_category">Букети</h2>
           <ul className="list_category ">
             {categories.map(({ key, label }, index) => (
               <li key={key} className={index === 0 ? undefined : "item_category"}>

@@ -44,25 +44,25 @@ const getMinDate = () => {
 
 const validationSchema = Yup.object().shape({
   firstName: Yup.string()
-    .required("Обязательное поле")
-    .matches(/^[а-яА-Яa-zA-Z]{1,15}$/, "Только буквы, не более 15 символов")
-    .max(15, "Не более 15 символов"),
+    .required("Обов’язкове поле")
+    .matches(/^[а-яА-ЯіІїЇєЄґҐa-zA-Z'-]{1,15}$/, "Лише літери, не більше 15 символів")
+    .max(15, "Не більше 15 символів"),
   lastName: Yup.string()
-    .required("Обязательное поле")
-    .matches(/^[а-яА-Яa-zA-Z]{1,15}$/, "Только буквы, не более 15 символов")
-    .max(15, "Не более 15 символов"),
+    .required("Обов’язкове поле")
+    .matches(/^[а-яА-ЯіІїЇєЄґҐa-zA-Z'-]{1,15}$/, "Лише літери, не більше 15 символів")
+    .max(15, "Не більше 15 символів"),
   phone: Yup.string()
-    .required("Обязательное поле")
+    .required("Обов’язкове поле")
     .matches(
       /^(?:\+?38)?(?:\([0-9]{3}\)|[0-9]{3})[0-9]{7}$/,
-      "Неверный формат номера"
+      "Невірний формат номера"
     ),
   messenger: Yup.string(),
-  comment: Yup.string().max(300, "Не более 300 символов"),
+  comment: Yup.string().max(300, "Не більше 300 символів"),
   selectedDate: Yup.date()
     .nullable()
-    .required("Выберите дату доставки")
-    .min(getMinDate(), "Доставка возможна не раньше чем через 3 дня"),
+    .required("Оберіть дату доставки")
+    .min(getMinDate(), "Доставка можлива не раніше ніж через 3 дні"),
 });
 
 export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
@@ -83,7 +83,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
     formikHelpers: FormikHelpers<FormData>
   ) => {
     if (bouquets.length === 0) {
-      return toast.info("Корзина пустая");
+      return toast.info("Кошик порожній");
     }
 
     setIsSending(true);
@@ -115,8 +115,8 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
       formikHelpers.resetForm();
       setShowThankYouModal(true);
     } catch (error) {
-      console.error("Не удалось отправить заказ:", error);
-      toast.error("Не удалось отправить заказ. Позвоните нам, пожалуйста.");
+      console.error("Не вдалося надіслати замовлення:", error);
+      toast.error("Не вдалося надіслати замовлення. Зателефонуйте нам, будь ласка.");
     } finally {
       setIsSending(false);
     }
@@ -130,7 +130,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
           setShowThankYouModal={setShowThankYouModal}
         />
       ) : null}
-      <h2 className="title_form_cart">Ваши контакты</h2>
+      <h2 className="title_form_cart">Ваші контакти</h2>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -159,7 +159,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasFirstNameText ? "input-label-active" : ""
                   }`}
                 >
-                  Имя*
+                  Ім’я*
                 </label>
                 <ErrorMessage
                   name="firstName"
@@ -188,7 +188,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasLastNameText ? "input-label-active" : ""
                   }`}
                 >
-                  Фамилия*
+                  Прізвище*
                 </label>
                 <ErrorMessage
                   name="lastName"
@@ -248,7 +248,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                     hasMessengerText ? "input-label-active" : ""
                   }`}
                 >
-                  Телеграм или Вайбер
+                  Телеграм або Вайбер
                 </label>
                 <ErrorMessage
                   name="messenger"
@@ -264,7 +264,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                 selected={values.selectedDate}
                 onChange={(date) => setFieldValue("selectedDate", date)}
                 dateFormat="dd.MM.yyyy"
-                placeholderText="Выберите дату*"
+                placeholderText="Оберіть дату*"
                 minDate={minDate}
                 withPortal
                 portalId="root-portal"
@@ -296,7 +296,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
                   hasCommentText ? "input-label-active" : ""
                 }`}
               >
-                Комментарий
+                Коментар
               </label>
               <ErrorMessage
                 name="comment"
@@ -310,7 +310,7 @@ export const FormCart: React.FC<Prop> = ({ onClose }: Prop) => {
               type="submit"
               disabled={isSending}
             >
-              {isSending ? "Отправляем..." : "Подтвердить заказ"}
+              {isSending ? "Надсилаємо..." : "Підтвердити замовлення"}
             </button>
           </Form>
         )}

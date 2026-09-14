@@ -5,10 +5,21 @@ import { useEffect, useState } from "react";
 import { Add } from "../../img/svg/Add";
 import { Minus } from "../../img/svg/Minus";
 
+/** Українське відмінювання: 1 букет, 2-4 букети, 5-20 букетів, 21 букет... */
+const pluralizeBouquets = (count: number): string => {
+  const mod100 = count % 100;
+  if (mod100 >= 11 && mod100 <= 14) return "Букетів";
+
+  const mod10 = count % 10;
+  if (mod10 === 1) return "Букет";
+  if (mod10 >= 2 && mod10 <= 4) return "Букети";
+  return "Букетів";
+};
+
 export const SelectedProducts = () => {
   const [totalPrice, setTotalPrice] = useState(Number);
   const [totalBouquets, setTotalBouquets] = useState(Number);
-  const [titleBouquets, setTitleBouquets] = useState("Букет");
+  const [titleBouquets, setTitleBouquets] = useState("Букетів");
   const bouquets = useBouquetsStore((state) => state.bouquets);
   const removeItems = useBouquetsStore((state) => state.removeItems);
   const removeCount = useBouquetsStore((state) => state.removeCount);
@@ -31,25 +42,12 @@ export const SelectedProducts = () => {
   }, [bouquets]);
 
   useEffect(() => {
-    let title = "Букет";
-    if (totalBouquets === 0) {
-      title = "Букетов";
-    }
-    if (totalBouquets === 1) {
-      title = "Букет";
-    }
-    if (totalBouquets > 1) {
-      title = "Букета";
-    }
-    if (totalBouquets > 4) {
-      title = "Букетов";
-    }
-    setTitleBouquets(title);
-  }, [bouquets, totalBouquets]);
+    setTitleBouquets(pluralizeBouquets(totalBouquets));
+  }, [totalBouquets]);
 
   return (
     <div className="wrapper_product">
-      <h2 className="title_select_cart">Товары в корзине</h2>
+      <h2 className="title_select_cart">Товари в кошику</h2>
       <ul className="list_product">
         {bouquets.map((bouquet) => {
           const sum = Number(bouquet.price) * Number(bouquet.count);
@@ -99,13 +97,13 @@ export const SelectedProducts = () => {
       </ul>
       <div className="wrapper_allSum_product">
         <p className="text_count_container">
-          Вместе:{" "}
+          Разом:{" "}
           <span className="span_container">
             {totalBouquets} {titleBouquets}
           </span>
         </p>
         <p className="text_count_container">
-          На сумму <span className="span_container">{totalPrice}</span> грн
+          На суму <span className="span_container">{totalPrice}</span> грн
         </p>
       </div>
     </div>

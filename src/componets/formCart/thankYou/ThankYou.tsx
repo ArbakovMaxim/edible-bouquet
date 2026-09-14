@@ -34,9 +34,9 @@ export const ThankYou = ({ onClose, setShowThankYouModal }: Prop) => {
           <Close />
         </button>
         <div className="wrapper_text_thanks">
-          <p className="text_thanks_one">Ваш заказ успешно принят.</p>
+          <p className="text_thanks_one">Ваше замовлення успішно прийнято.</p>
           <p className="text_thanks">
-            Мы скоро с вами свяжемся, для уточнения заказа.
+            Ми скоро з вами зв’яжемося для уточнення замовлення.
           </p>
         </div>
       </div>

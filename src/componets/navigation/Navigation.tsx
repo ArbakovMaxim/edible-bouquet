@@ -9,7 +9,7 @@ export const Navigation = ({ onClose }: Prop) => {
     <ul className="list_navigation">
       <li onClick={onClose}>
         <a className="link_header" href="#Catalog">
-          Букеты
+          Букети
         </a>
       </li>
       <li className="item_navigation" onClick={onClose}>
@@ -19,7 +19,7 @@ export const Navigation = ({ onClose }: Prop) => {
       </li>
       <li className="item_navigation" onClick={onClose}>
         <a className="link_header" href="#AboutUs">
-          О нас
+          Про нас
         </a>
       </li>
     </ul>
